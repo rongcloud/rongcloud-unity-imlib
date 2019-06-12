@@ -17,7 +17,10 @@ namespace cn.rongcloud.sdk
         {
 
         }
-
+        private void Awake()
+        {
+            DontDestroyOnLoad(gameObject);
+        }
         public void CommCallback(string msg)
         {
             Debug.LogError(msg);
