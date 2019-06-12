@@ -1,0 +1,408 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F22EC9F322AB90C30033E5AE /* RongCloudUnityUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F22EC9F222AB90C30033E5AE /* RongCloudUnityUtils.m */; };
+		F2CA71A322A69C9600B6DED2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CA71A222A69C9600B6DED2 /* AppDelegate.m */; };
+		F2CA71A622A69C9600B6DED2 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CA71A522A69C9600B6DED2 /* RootViewController.m */; };
+		F2CA71A922A69C9600B6DED2 /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CA71A822A69C9600B6DED2 /* DataViewController.m */; };
+		F2CA71AC22A69C9600B6DED2 /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CA71AB22A69C9600B6DED2 /* ModelController.m */; };
+		F2CA71AF22A69C9600B6DED2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2CA71AD22A69C9600B6DED2 /* Main.storyboard */; };
+		F2CA71B122A69C9700B6DED2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2CA71B022A69C9700B6DED2 /* Assets.xcassets */; };
+		F2CA71B422A69C9700B6DED2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2CA71B222A69C9700B6DED2 /* LaunchScreen.storyboard */; };
+		F2CA71B722A69C9700B6DED2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CA71B622A69C9700B6DED2 /* main.m */; };
+		F2CA71D422A6A1EA00B6DED2 /* libvo-amrwbenc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2CA71CF22A6A1EA00B6DED2 /* libvo-amrwbenc.a */; };
+		F2CA71D522A6A1EA00B6DED2 /* RCConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2CA71D022A6A1EA00B6DED2 /* RCConfig.plist */; };
+		F2CA71D622A6A1EA00B6DED2 /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2CA71D122A6A1EA00B6DED2 /* libopencore-amrnb.a */; };
+		F2CA71D722A6A1EA00B6DED2 /* libopencore-amrwb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2CA71D222A6A1EA00B6DED2 /* libopencore-amrwb.a */; };
+		F2CA71D822A6A1EA00B6DED2 /* RongIMLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2CA71D322A6A1EA00B6DED2 /* RongIMLib.framework */; };
+		F2CA71DA22A6B3AB00B6DED2 /* RongCloudUnity.mm in Sources */ = {isa = PBXBuildFile; fileRef = F2CA71D922A6B3AB00B6DED2 /* RongCloudUnity.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F22EC9F222AB90C30033E5AE /* RongCloudUnityUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RongCloudUnityUtils.m; sourceTree = "<group>"; };
+		F22EC9F422AB90D60033E5AE /* RongCloudUnityUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RongCloudUnityUtils.h; sourceTree = "<group>"; };
+		F2CA719E22A69C9600B6DED2 /* RCIMLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCIMLib.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2CA71A122A69C9600B6DED2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F2CA71A222A69C9600B6DED2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F2CA71A422A69C9600B6DED2 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		F2CA71A522A69C9600B6DED2 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		F2CA71A722A69C9600B6DED2 /* DataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataViewController.h; sourceTree = "<group>"; };
+		F2CA71A822A69C9600B6DED2 /* DataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataViewController.m; sourceTree = "<group>"; };
+		F2CA71AA22A69C9600B6DED2 /* ModelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
+		F2CA71AB22A69C9600B6DED2 /* ModelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
+		F2CA71AE22A69C9600B6DED2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F2CA71B022A69C9700B6DED2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F2CA71B322A69C9700B6DED2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F2CA71B522A69C9700B6DED2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2CA71B622A69C9700B6DED2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F2CA71C122A69E9400B6DED2 /* RongCloudUnity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RongCloudUnity.h; sourceTree = "<group>"; };
+		F2CA71CF22A6A1EA00B6DED2 /* libvo-amrwbenc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libvo-amrwbenc.a"; sourceTree = "<group>"; };
+		F2CA71D022A6A1EA00B6DED2 /* RCConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RCConfig.plist; sourceTree = "<group>"; };
+		F2CA71D122A6A1EA00B6DED2 /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrnb.a"; sourceTree = "<group>"; };
+		F2CA71D222A6A1EA00B6DED2 /* libopencore-amrwb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrwb.a"; sourceTree = "<group>"; };
+		F2CA71D322A6A1EA00B6DED2 /* RongIMLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RongIMLib.framework; sourceTree = "<group>"; };
+		F2CA71D922A6B3AB00B6DED2 /* RongCloudUnity.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RongCloudUnity.mm; sourceTree = "<group>"; };
+		F2CA71DB22A81CBB00B6DED2 /* UnityInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnityInterface.h; sourceTree = "<group>"; };
+		F2CA71DC22A81EB800B6DED2 /* UnityForwardDecls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnityForwardDecls.h; sourceTree = "<group>"; };
+		F2CA71DD22A81ED300B6DED2 /* UnitySharedDecls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitySharedDecls.h; sourceTree = "<group>"; };
+		F2CA71DE22A940C400B6DED2 /* UnityRendering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnityRendering.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F2CA719B22A69C9600B6DED2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2CA71D422A6A1EA00B6DED2 /* libvo-amrwbenc.a in Frameworks */,
+				F2CA71D722A6A1EA00B6DED2 /* libopencore-amrwb.a in Frameworks */,
+				F2CA71D822A6A1EA00B6DED2 /* RongIMLib.framework in Frameworks */,
+				F2CA71D622A6A1EA00B6DED2 /* libopencore-amrnb.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F2CA719522A69C9600B6DED2 = {
+			isa = PBXGroup;
+			children = (
+				F2CA71A022A69C9600B6DED2 /* RCIMLib */,
+				F2CA719F22A69C9600B6DED2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F2CA719F22A69C9600B6DED2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F2CA719E22A69C9600B6DED2 /* RCIMLib.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F2CA71A022A69C9600B6DED2 /* RCIMLib */ = {
+			isa = PBXGroup;
+			children = (
+				F2CA71DE22A940C400B6DED2 /* UnityRendering.h */,
+				F2CA71DD22A81ED300B6DED2 /* UnitySharedDecls.h */,
+				F2CA71DC22A81EB800B6DED2 /* UnityForwardDecls.h */,
+				F2CA71DB22A81CBB00B6DED2 /* UnityInterface.h */,
+				F2CA71D122A6A1EA00B6DED2 /* libopencore-amrnb.a */,
+				F2CA71D222A6A1EA00B6DED2 /* libopencore-amrwb.a */,
+				F2CA71CF22A6A1EA00B6DED2 /* libvo-amrwbenc.a */,
+				F2CA71D022A6A1EA00B6DED2 /* RCConfig.plist */,
+				F2CA71D322A6A1EA00B6DED2 /* RongIMLib.framework */,
+				F2CA71C122A69E9400B6DED2 /* RongCloudUnity.h */,
+				F2CA71D922A6B3AB00B6DED2 /* RongCloudUnity.mm */,
+				F22EC9F422AB90D60033E5AE /* RongCloudUnityUtils.h */,
+				F22EC9F222AB90C30033E5AE /* RongCloudUnityUtils.m */,
+				F2CA71A122A69C9600B6DED2 /* AppDelegate.h */,
+				F2CA71A222A69C9600B6DED2 /* AppDelegate.m */,
+				F2CA71A422A69C9600B6DED2 /* RootViewController.h */,
+				F2CA71A522A69C9600B6DED2 /* RootViewController.m */,
+				F2CA71A722A69C9600B6DED2 /* DataViewController.h */,
+				F2CA71A822A69C9600B6DED2 /* DataViewController.m */,
+				F2CA71AA22A69C9600B6DED2 /* ModelController.h */,
+				F2CA71AB22A69C9600B6DED2 /* ModelController.m */,
+				F2CA71AD22A69C9600B6DED2 /* Main.storyboard */,
+				F2CA71B022A69C9700B6DED2 /* Assets.xcassets */,
+				F2CA71B222A69C9700B6DED2 /* LaunchScreen.storyboard */,
+				F2CA71B522A69C9700B6DED2 /* Info.plist */,
+				F2CA71B622A69C9700B6DED2 /* main.m */,
+			);
+			path = RCIMLib;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F2CA719D22A69C9600B6DED2 /* RCIMLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2CA71BA22A69C9700B6DED2 /* Build configuration list for PBXNativeTarget "RCIMLib" */;
+			buildPhases = (
+				F2CA719A22A69C9600B6DED2 /* Sources */,
+				F2CA719B22A69C9600B6DED2 /* Frameworks */,
+				F2CA719C22A69C9600B6DED2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RCIMLib;
+			productName = RCIMLib;
+			productReference = F2CA719E22A69C9600B6DED2 /* RCIMLib.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F2CA719622A69C9600B6DED2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = sha;
+				TargetAttributes = {
+					F2CA719D22A69C9600B6DED2 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = F2CA719922A69C9600B6DED2 /* Build configuration list for PBXProject "RCIMLib" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F2CA719522A69C9600B6DED2;
+			productRefGroup = F2CA719F22A69C9600B6DED2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F2CA719D22A69C9600B6DED2 /* RCIMLib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F2CA719C22A69C9600B6DED2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2CA71B422A69C9700B6DED2 /* LaunchScreen.storyboard in Resources */,
+				F2CA71B122A69C9700B6DED2 /* Assets.xcassets in Resources */,
+				F2CA71AF22A69C9600B6DED2 /* Main.storyboard in Resources */,
+				F2CA71D522A6A1EA00B6DED2 /* RCConfig.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F2CA719A22A69C9600B6DED2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2CA71B722A69C9700B6DED2 /* main.m in Sources */,
+				F2CA71A622A69C9600B6DED2 /* RootViewController.m in Sources */,
+				F2CA71AC22A69C9600B6DED2 /* ModelController.m in Sources */,
+				F2CA71DA22A6B3AB00B6DED2 /* RongCloudUnity.mm in Sources */,
+				F2CA71A922A69C9600B6DED2 /* DataViewController.m in Sources */,
+				F2CA71A322A69C9600B6DED2 /* AppDelegate.m in Sources */,
+				F22EC9F322AB90C30033E5AE /* RongCloudUnityUtils.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F2CA71AD22A69C9600B6DED2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F2CA71AE22A69C9600B6DED2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F2CA71B222A69C9700B6DED2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F2CA71B322A69C9700B6DED2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F2CA71B822A69C9700B6DED2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F2CA71B922A69C9700B6DED2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F2CA71BB22A69C9700B6DED2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RCIMLib",
+				);
+				INFOPLIST_FILE = RCIMLib/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RCIMLib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.rongcloud.RCIMLib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F2CA71BC22A69C9700B6DED2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RCIMLib",
+				);
+				INFOPLIST_FILE = RCIMLib/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RCIMLib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cn.rongcloud.RCIMLib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F2CA719922A69C9600B6DED2 /* Build configuration list for PBXProject "RCIMLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2CA71B822A69C9700B6DED2 /* Debug */,
+				F2CA71B922A69C9700B6DED2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2CA71BA22A69C9700B6DED2 /* Build configuration list for PBXNativeTarget "RCIMLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2CA71BB22A69C9700B6DED2 /* Debug */,
+				F2CA71BC22A69C9700B6DED2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F2CA719622A69C9600B6DED2 /* Project object */;
+}
