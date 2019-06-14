@@ -31,6 +31,7 @@ Token 的主要作用是身份授权和安全，因此不能通过客户端直�
 
 下载 [Unity IMLib](https://github.com/rongcloud/rongcloud-unity-imlib) 将 rongcloud_unity.unitypackage 导入 Unity 工程。
 将 RongCloud.prefab 拖入您的启动场景。
+
 ![image](https://raw.githubusercontent.com/rongcloud/rongcloud-unity-imlib/master/Docs/images/dropprefab.png)
 
 ## 基本用法
