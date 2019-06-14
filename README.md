@@ -1,43 +1,43 @@
 # rongcloud-unity-imlib
 
-ÈÚÔÆ Unity IMLib ÊÇÒÔ IMLib SDK 2.9.17 °æ±¾Îª»ù´¡ÊµÏÖµÄ¿ªÔ´ÏîÄ¿£¬Ö§³Ö Android¡¢iOS£¬¿ª·¢ÕßÔÚ¼¯³ÉÊ¹ÓÃ¹ı³ÌÖĞÈçÓöµ½ÎÊÌâ¿ÉÌá½»µ½ GitHub µÄ Issues ÖĞ£¬ÈÚÔÆ¼¼ÊõÖ§³ÖÈËÔ±»áÔÚ 1 ¸ö¹¤×÷ÈÕÄÚ»Ø¸´ÎÊÌâ£¬Ğ»Ğ»Äú¶ÔÈÚÔÆµÄÀí½âÓëÖ§³Ö¡£
+èäº‘ Unity IMLib æ˜¯ä»¥ IMLib SDK 2.9.17 ç‰ˆæœ¬ä¸ºåŸºç¡€å®ç°çš„å¼€æºé¡¹ç›®ï¼Œæ”¯æŒ Androidã€iOSï¼Œå¼€å‘è€…åœ¨é›†æˆä½¿ç”¨è¿‡ç¨‹ä¸­å¦‚é‡åˆ°é—®é¢˜å¯æäº¤åˆ° GitHub çš„ Issues ä¸­ï¼Œèäº‘æŠ€æœ¯æ”¯æŒäººå‘˜ä¼šåœ¨ 1 ä¸ªå·¥ä½œæ—¥å†…å›å¤é—®é¢˜ï¼Œè°¢è°¢æ‚¨å¯¹èäº‘çš„ç†è§£ä¸æ”¯æŒã€‚
 
-## ÎÄµµ
+## æ–‡æ¡£
+[ä½¿ç”¨æŒ‡å—](https://raw.githubusercontent.com/rongcloud/rongcloud-unity-imlib/master/Docs/README.md)
+## ç”¨æ³•
 
-## ÓÃ·¨
-
-### ³õÊ¼»¯²¢Á¬½ÓÈÚÔÆ·şÎñ
+### åˆå§‹åŒ–å¹¶è¿æ¥èäº‘æœåŠ¡
 
 ```c#
 RongCloud.init(appKey);
 RongCloud.connect(token);
 ```
 
-### ¼àÌıÏûÏ¢
+### ç›‘å¬æ¶ˆæ¯
 
 ```c#
 RCEvent.onReceiveMessageEvent += receiveMessage;
 ```
 
-### ·¢ËÍÏûÏ¢
+### å‘é€æ¶ˆæ¯
 
 ```c#
 TextMessage tm = new TextMessage();
-tm.content = "ÏûÏ¢·¢ËÍ²âÊÔ£¡";
+tm.content = "æ¶ˆæ¯å‘é€æµ‹è¯•ï¼";
 RongCloud.sendMessage(ConversationType.CHATROOM, "testRoom", tm,(eventID++).ToString());
 ```
 
-¸ü¶àÊ¾ÀıÇë²Î¿¼ [SampleScene]¡£
+æ›´å¤šç¤ºä¾‹è¯·å‚è€ƒ [SampleScene]ã€‚
 
-## ÔËĞĞÊ¾Àı
-µ¼Èë rongcloud_unity.unitypackage °ü
-´ò¿ª RongCloud/example/Scenes/SampleScene
-ÔÚ RongCloudSdkExample.cs ÖĞÌîÈë appKey token µÈĞÅÏ¢¡£
-## ÏîÄ¿½á¹¹
+## è¿è¡Œç¤ºä¾‹
+å¯¼å…¥ rongcloud_unity.unitypackage åŒ…
+æ‰“å¼€ RongCloud/example/Scenes/SampleScene
+åœ¨ RongCloudSdkExample.cs ä¸­å¡«å…¥ appKey token ç­‰ä¿¡æ¯ã€‚
+## é¡¹ç›®ç»“æ„
 ```
-©À©¤©¤ RongUnity (Unity Ê¾ÀıÓ¦ÓÃ)
-©À©¤©¤ UnityPackage (Unity SDK °ü)
-©À©¤©¤ lib
-     ©À©¤©¤ android (Android Ô­ÉúÄ£¿é)
-     ©¸©¤©¤ IOS   (ios Ô­ÉúÄ£¿é)
+â”œâ”€â”€ RongUnity (Unity ç¤ºä¾‹åº”ç”¨)
+â”œâ”€â”€ UnityPackage (Unity SDK åŒ…)
+â”œâ”€â”€ lib
+     â”œâ”€â”€ android (Android åŸç”Ÿæ¨¡å—)
+     â””â”€â”€ IOS   (ios åŸç”Ÿæ¨¡å—)
 
