@@ -3,7 +3,9 @@
 融云 Unity IMLib 是以 IMLib SDK 2.9.17 版本为基础实现的开源项目，支持 Android、iOS，开发者在集成使用过程中如遇到问题可提交到 GitHub 的 Issues 中，融云技术支持人员会在 1 个工作日内回复问题，谢谢您对融云的理解与支持。
 
 ## 文档
-[使用指南](https://raw.githubusercontent.com/rongcloud/rongcloud-unity-imlib/master/Docs/README.md)
+
+- [使用指南](https://github.com/rongcloud/rongcloud-unity-imlib/blob/master/Docs/README.md)
+
 ## 用法
 
 ### 初始化并连接融云服务
