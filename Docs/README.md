@@ -1,43 +1,43 @@
-## Ç°ÆÚ×¼±¸
+## å‰æœŸå‡†å¤‡
 
-    ÈÚÔÆ [Unity IMLib](https://github.com/rongcloud/rongcloud-unity-imlib) ÊÇÒÔ IMLib SDK 2.9.17 °æ±¾Îª»ù´¡ÊµÏÖµÄ¿ªÔ´ÏîÄ¿£¬Ö§³Ö Android¡¢iOS£¬¿ª·¢ÕßÔÚ¼¯³ÉÊ¹ÓÃ¹ı³ÌÖĞÈçÓöµ½ÎÊÌâ¿ÉÌá½»µ½ GitHub µÄ Issues ÖĞ£¬ÈÚÔÆ¼¼ÊõÖ§³ÖÈËÔ±»áÔÚ 1 ¸ö¹¤×÷ÈÕÄÚ»Ø¸´ÎÊÌâ£¬Ğ»Ğ»Äú¶ÔÈÚÔÆµÄÀí½âÓëÖ§³Ö¡£
+èäº‘ [Unity IMLib](https://github.com/rongcloud/rongcloud-unity-imlib) æ˜¯ä»¥ IMLib SDK 2.9.17 ç‰ˆæœ¬ä¸ºåŸºç¡€å®ç°çš„å¼€æºé¡¹ç›®ï¼Œæ”¯æŒ Androidã€iOSï¼Œå¼€å‘è€…åœ¨é›†æˆä½¿ç”¨è¿‡ç¨‹ä¸­å¦‚é‡åˆ°é—®é¢˜å¯æäº¤åˆ° GitHub çš„ Issues ä¸­ï¼Œèäº‘æŠ€æœ¯æ”¯æŒäººå‘˜ä¼šåœ¨ 1 ä¸ªå·¥ä½œæ—¥å†…å›å¤é—®é¢˜ï¼Œè°¢è°¢æ‚¨å¯¹èäº‘çš„ç†è§£ä¸æ”¯æŒã€‚
 
-### ×¢²á¿ª·¢ÕßÕËºÅ
+### æ³¨å†Œå¼€å‘è€…è´¦å·
 
-ÇëÇ°Íù[ÈÚÔÆ¹Ù·½ÍøÕ¾](https://developer.rongcloud.cn/signup)×¢²á¿ª·¢ÕßÕÊºÅ¡£×¢²áÊ±£¬ÄúĞèÒªÌá¹©ÕæÊµµÄÓÊÏäºÍÊÖ»úºÅ£¬ÒÔ·½±ãÎÒÃÇÏòÄú·¢ËÍÖØÒªÍ¨Öª²¢ÔÚ½ô¼±Ê±¿ÌÄÜ¹»ÁªÏµµ½Äú¡£
-Èç¹ûÄúÃ»ÓĞÌá¹©ÕıÈ·¿ÉÓÃµÄÓÊÏäºÍÊÖ»úºÅ£¬ÎÒÃÇËæÊ±¿ÉÄÜ¹Ø±ÕÄúµÄÓ¦ÓÃ¡£
+è¯·å‰å¾€[èäº‘å®˜æ–¹ç½‘ç«™](https://developer.rongcloud.cn/signup)æ³¨å†Œå¼€å‘è€…å¸å·ã€‚æ³¨å†Œæ—¶ï¼Œæ‚¨éœ€è¦æä¾›çœŸå®çš„é‚®ç®±å’Œæ‰‹æœºå·ï¼Œä»¥æ–¹ä¾¿æˆ‘ä»¬å‘æ‚¨å‘é€é‡è¦é€šçŸ¥å¹¶åœ¨ç´§æ€¥æ—¶åˆ»èƒ½å¤Ÿè”ç³»åˆ°æ‚¨ã€‚
+å¦‚æœæ‚¨æ²¡æœ‰æä¾›æ­£ç¡®å¯ç”¨çš„é‚®ç®±å’Œæ‰‹æœºå·ï¼Œæˆ‘ä»¬éšæ—¶å¯èƒ½å…³é—­æ‚¨çš„åº”ç”¨ã€‚
 
-### ´´½¨Ó¦ÓÃ
+### åˆ›å»ºåº”ç”¨
 
-×¢²áÁË¿ª·¢ÕßÕÊºÅÖ®ºó£¬ÔÚ½øĞĞ¿ª·¢ App Ö®Ç°£¬ÄúĞèÒªÇ°Íù[ÈÚÔÆ¿ª·¢Õß¿ØÖÆÌ¨](https://developer.rongcloud.cn/signup)´´½¨Ó¦ÓÃ¡£
-´´½¨ÍêÓ¦ÓÃÖ®ºó£¬ÔÚÄúµÄÓ¦ÓÃÖĞ£¬»á×Ô¶¯´´½¨Á½Ì×»·¾³£¬¼´£º¿ª·¢»·¾³ºÍÉú²ú»·¾³
+æ³¨å†Œäº†å¼€å‘è€…å¸å·ä¹‹åï¼Œåœ¨è¿›è¡Œå¼€å‘ App ä¹‹å‰ï¼Œæ‚¨éœ€è¦å‰å¾€[èäº‘å¼€å‘è€…æ§åˆ¶å°](https://developer.rongcloud.cn/signup)åˆ›å»ºåº”ç”¨ã€‚
+åˆ›å»ºå®Œåº”ç”¨ä¹‹åï¼Œåœ¨æ‚¨çš„åº”ç”¨ä¸­ï¼Œä¼šè‡ªåŠ¨åˆ›å»ºä¸¤å¥—ç¯å¢ƒï¼Œå³ï¼šå¼€å‘ç¯å¢ƒå’Œç”Ÿäº§ç¯å¢ƒ
 
 ![](https://user-images.githubusercontent.com/1709072/55678058-2bcd1280-5926-11e9-867f-b6964b1bdbaf.png)
 
-¿ª·¢»·¾³×¨ÃÅÓÃÓÚ¿ª·¢²âÊÔ£¬Éú²ú»·¾³×¨ÃÅÓÃÓÚÄúµÄÓ¦ÓÃÉÏÏßÕıÊ½ÉÌÓÃ¡£Á½Ì×»·¾³Ïà»¥¸ôÀë£¬Ã¿¸ö»·¾³¶¼ÓĞÏàÓ¦µÄ App Key ºÍ App Secret¡£Á½¸ö»·¾³ÏûÏ¢²»»¥Í¨¡£
+å¼€å‘ç¯å¢ƒä¸“é—¨ç”¨äºå¼€å‘æµ‹è¯•ï¼Œç”Ÿäº§ç¯å¢ƒä¸“é—¨ç”¨äºæ‚¨çš„åº”ç”¨ä¸Šçº¿æ­£å¼å•†ç”¨ã€‚ä¸¤å¥—ç¯å¢ƒç›¸äº’éš”ç¦»ï¼Œæ¯ä¸ªç¯å¢ƒéƒ½æœ‰ç›¸åº”çš„ App Key å’Œ App Secretã€‚ä¸¤ä¸ªç¯å¢ƒæ¶ˆæ¯ä¸äº’é€šã€‚
 
-### »ñÈ¡ Token
+### è·å– Token
 
-Token ³ÆÎªÓÃ»§ÁîÅÆ£¬App Key ÊÇÄúµÄ App µÄÎ¨Ò»±êÊ¶£¬Token ÔòÊÇÄú App ÉÏµÄÃ¿Ò»¸öÓÃ»§µÄÉí·İÊÚÈ¨ÏóÕ÷¡£
-Äú¿ÉÒÔÍ¨¹ıÌá½» userId µÈĞÅÏ¢À´»ñµÃÒ»¸ö¸ÃÓÃ»§¶ÔÓ¦µÄ Token£¬²¢Ê¹ÓÃÕâ¸ö Token ×÷Îª¸ÃÓÃ»§µÄÎ¨Ò»Éí·İÆ¾Ö¤ÓëÆäËûÓÃ»§½øĞĞÍ¨ĞÅ¡£
+Token ç§°ä¸ºç”¨æˆ·ä»¤ç‰Œï¼ŒApp Key æ˜¯æ‚¨çš„ App çš„å”¯ä¸€æ ‡è¯†ï¼ŒToken åˆ™æ˜¯æ‚¨ App ä¸Šçš„æ¯ä¸€ä¸ªç”¨æˆ·çš„èº«ä»½æˆæƒè±¡å¾ã€‚
+æ‚¨å¯ä»¥é€šè¿‡æäº¤ userId ç­‰ä¿¡æ¯æ¥è·å¾—ä¸€ä¸ªè¯¥ç”¨æˆ·å¯¹åº”çš„ Tokenï¼Œå¹¶ä½¿ç”¨è¿™ä¸ª Token ä½œä¸ºè¯¥ç”¨æˆ·çš„å”¯ä¸€èº«ä»½å‡­è¯ä¸å…¶ä»–ç”¨æˆ·è¿›è¡Œé€šä¿¡ã€‚
 
-Token µÄÖ÷Òª×÷ÓÃÊÇÉí·İÊÚÈ¨ºÍ°²È«£¬Òò´Ë²»ÄÜÍ¨¹ı¿Í»§¶ËÖ±½Ó·ÃÎÊÈÚÔÆ·şÎñÆ÷»ñÈ¡ Token£¬Äú±ØĞëÍ¨¹ı Server API ´ÓÈÚÔÆ·şÎñÆ÷»ñÈ¡ Token ·µ»Ø¸øÄúµÄ App£¬²¢ÔÚÖ®ºóÁ¬½ÓÊ±Ê¹ÓÃ¡£
-ÏêÏ¸ÃèÊöÇë²Î¿¼ [Server ¿ª·¢Ö¸ÄÏ](https://www.rongcloud.cn/docs/server.html#»ñÈ¡_Token_·½·¨) ÖĞµÄÓÃ»§·şÎñºÍ»ñÈ¡ Token ·½·¨Ğ¡½Ú¡£
+Token çš„ä¸»è¦ä½œç”¨æ˜¯èº«ä»½æˆæƒå’Œå®‰å…¨ï¼Œå› æ­¤ä¸èƒ½é€šè¿‡å®¢æˆ·ç«¯ç›´æ¥è®¿é—®èäº‘æœåŠ¡å™¨è·å– Tokenï¼Œæ‚¨å¿…é¡»é€šè¿‡ Server API ä»èäº‘æœåŠ¡å™¨è·å– Token è¿”å›ç»™æ‚¨çš„ Appï¼Œå¹¶åœ¨ä¹‹åè¿æ¥æ—¶ä½¿ç”¨ã€‚
+è¯¦ç»†æè¿°è¯·å‚è€ƒ [Server å¼€å‘æŒ‡å—](https://www.rongcloud.cn/docs/server.html#è·å–_Token_æ–¹æ³•) ä¸­çš„ç”¨æˆ·æœåŠ¡å’Œè·å– Token æ–¹æ³•å°èŠ‚ã€‚
 
-> ÎªÁË·½±ãÄúÔÚ¼¯³ÉºÍ²âÊÔ¹ı³ÌÖĞÊ¹ÓÃ£¬ÎÒÃÇ»¹Ìá¹©ÁË API µ÷ÊÔ¹¤¾ß£¬ÔÚÄú²»ÄÜ²¿Êğ·şÎñÆ÷³ÌĞòÊ±£¬¿ÉÒÔÖ±½ÓÍ¨¹ı´«Èë userId ºÍ name À´»ñµÃ Token¡£
-> Çë·ÃÎÊÈÚÔÆ¿ª·¢ÕßÆ½Ì¨£¬´ò¿ªÄúÏë²âÊÔµÄÓ¦ÓÃ£¬ÔÚ×ó²à²Ëµ¥ÖĞÑ¡Ôñ ¡°[API µ÷ÊÔ](https://developer.rongcloud.cn/apitool/qmZqBYUO1SBO+jDieKo=)¡±¼´¿É¡£
+> ä¸ºäº†æ–¹ä¾¿æ‚¨åœ¨é›†æˆå’Œæµ‹è¯•è¿‡ç¨‹ä¸­ä½¿ç”¨ï¼Œæˆ‘ä»¬è¿˜æä¾›äº† API è°ƒè¯•å·¥å…·ï¼Œåœ¨æ‚¨ä¸èƒ½éƒ¨ç½²æœåŠ¡å™¨ç¨‹åºæ—¶ï¼Œå¯ä»¥ç›´æ¥é€šè¿‡ä¼ å…¥ userId å’Œ name æ¥è·å¾— Tokenã€‚
+> è¯·è®¿é—®èäº‘å¼€å‘è€…å¹³å°ï¼Œæ‰“å¼€æ‚¨æƒ³æµ‹è¯•çš„åº”ç”¨ï¼Œåœ¨å·¦ä¾§èœå•ä¸­é€‰æ‹© â€œ[API è°ƒè¯•](https://developer.rongcloud.cn/apitool/qmZqBYUO1SBO+jDieKo=)â€å³å¯ã€‚
 
-## SDK ¼¯³É
+## SDK é›†æˆ
 
-ÏÂÔØ [Unity IMLib](https://github.com/rongcloud/rongcloud-unity-imlib) ½« rongcloud_unity.unitypackage µ¼Èë Unity ¹¤³Ì¡£
-½« RongCloud.prefab ÍÏÈëÄúµÄÆô¶¯³¡¾°¡£
+ä¸‹è½½ [Unity IMLib](https://github.com/rongcloud/rongcloud-unity-imlib) å°† rongcloud_unity.unitypackage å¯¼å…¥ Unity å·¥ç¨‹ã€‚
+å°† RongCloud.prefab æ‹–å…¥æ‚¨çš„å¯åŠ¨åœºæ™¯ã€‚
 ![image](https://raw.githubusercontent.com/rongcloud/rongcloud-unity-imlib/master/Docs/images/dropprefab.png)
 
-## »ù±¾ÓÃ·¨
+## åŸºæœ¬ç”¨æ³•
 
-### ³õÊ¼»¯ SDK
+### åˆå§‹åŒ– SDK
 
-ÄúÔÚÊ¹ÓÃÈÚÔÆ SDK ËùÓĞ¹¦ÄÜÖ®Ç°£¬Äú±ØĞëÏÈµ÷ÓÃ´Ë·½·¨³õÊ¼»¯ SDK¡£ÔÚ App µÄÕû¸öÉúÃüÖÜÆÚÖĞ£¬ÄúÖ»ĞèÒª½« SDK ³õÊ¼»¯Ò»´Î¡£
+æ‚¨åœ¨ä½¿ç”¨èäº‘ SDK æ‰€æœ‰åŠŸèƒ½ä¹‹å‰ï¼Œæ‚¨å¿…é¡»å…ˆè°ƒç”¨æ­¤æ–¹æ³•åˆå§‹åŒ– SDKã€‚åœ¨ App çš„æ•´ä¸ªç”Ÿå‘½å‘¨æœŸä¸­ï¼Œæ‚¨åªéœ€è¦å°† SDK åˆå§‹åŒ–ä¸€æ¬¡ã€‚
 
 ```c
 using cn.rongcloud.sdk;
@@ -45,104 +45,104 @@ using cn.rongcloud.sdk;
 RongCloud.init(appKey);
 ```
 
-### Á¬½Ó·şÎñÆ÷
+### è¿æ¥æœåŠ¡å™¨
 
-ÔÚ App Õû¸öÉúÃüÖÜÆÚ£¬ÄúÖ»ĞèÒªµ÷ÓÃÒ»´Î´Ë·½·¨ÓëÈÚÔÆ·şÎñÆ÷½¨Á¢Á¬½Ó¡£Ö®ºóÎŞÂÛÊÇÍøÂç³öÏÖÒì³£»òÕß App ÓĞÇ°ºóÌ¨µÄÇĞ»»µÈ£¬SDK ¶¼»á¸ºÔğ×Ô¶¯ÖØÁ¬¡£
-SDK Õë¶Ô App µÄÇ°ºóÌ¨ºÍ¸÷ÖÖÍøÂç×´¿ö£¬½øĞĞÁËÁ¬½ÓºÍÖØÁ¬»úÖÆµÄÓÅ»¯£¬½¨ÒéÄúµ÷ÓÃÒ»´Î `connect` ¼´¿É£¬ÆäÓà½»¸ø SDK ´¦Àí¡£
-³ı·ÇÄúÒÑ¾­ÊÖ¶¯½«Á¬½Ó¶Ï¿ª£¬·ñÔòÄú²»ĞèÒª×Ô¼ºÔÙÊÖ¶¯ÖØÁ¬¡£
+åœ¨ App æ•´ä¸ªç”Ÿå‘½å‘¨æœŸï¼Œæ‚¨åªéœ€è¦è°ƒç”¨ä¸€æ¬¡æ­¤æ–¹æ³•ä¸èäº‘æœåŠ¡å™¨å»ºç«‹è¿æ¥ã€‚ä¹‹åæ— è®ºæ˜¯ç½‘ç»œå‡ºç°å¼‚å¸¸æˆ–è€… App æœ‰å‰åå°çš„åˆ‡æ¢ç­‰ï¼ŒSDK éƒ½ä¼šè´Ÿè´£è‡ªåŠ¨é‡è¿ã€‚
+SDK é’ˆå¯¹ App çš„å‰åå°å’Œå„ç§ç½‘ç»œçŠ¶å†µï¼Œè¿›è¡Œäº†è¿æ¥å’Œé‡è¿æœºåˆ¶çš„ä¼˜åŒ–ï¼Œå»ºè®®æ‚¨è°ƒç”¨ä¸€æ¬¡ `connect` å³å¯ï¼Œå…¶ä½™äº¤ç»™ SDK å¤„ç†ã€‚
+é™¤éæ‚¨å·²ç»æ‰‹åŠ¨å°†è¿æ¥æ–­å¼€ï¼Œå¦åˆ™æ‚¨ä¸éœ€è¦è‡ªå·±å†æ‰‹åŠ¨é‡è¿ã€‚
 
 ```c
 using cn.rongcloud.sdk;
 void Start()
 {
-    //ÉèÖÃ¼àÌı
+    //è®¾ç½®ç›‘å¬
     RCEvent.connectEvent+=connectEvent;
     RongCloud.connect(token);
 }
 void connectEvent(JsonData msg)
  {
      if(msg["status"].ToString()=="success"){
-         Debug.Log("Á¬½Ó³É¹¦");
+         Debug.Log("è¿æ¥æˆåŠŸ");
      }else if(msg["status"].ToString()=="error"){
-         Debug.Log("Á¬½ÓÊ§°Ü£º"+(ErrorCode)int.Parse(msg["errorCode"].ToString()));
+         Debug.Log("è¿æ¥å¤±è´¥ï¼š"+(ErrorCode)int.Parse(msg["errorCode"].ToString()));
      }else{
-         Debug.Log("Token ²»ÕıÈ·»òÒÑ¹ıÆÚ");
+         Debug.Log("Token ä¸æ­£ç¡®æˆ–å·²è¿‡æœŸ");
      }
 }
 
 void OnDestroy()
 {
-    //ÒÆ³ı¼àÌı
+    //ç§»é™¤ç›‘å¬
     RCEvent.connectEvent-=connectEvent;
 }
 ```
 
-### ¼àÌıÁ¬½Ó×´Ì¬
+### ç›‘å¬è¿æ¥çŠ¶æ€
 
 ```c
 void Start()
 {
-    //ÉèÖÃ¼àÌı
+    //è®¾ç½®ç›‘å¬
     RCEvent.connectionStatusEvent+=connectionStatusEvent;
     RongCloud.connect(token);
 }
 void connectionStatusEvent(JsonData msg)
  {
      if(msg["status"].ToString()=="success"){
-         Debug.Log("Á¬½Ó³É¹¦");
+         Debug.Log("è¿æ¥æˆåŠŸ");
      }else if(msg["status"].ToString()=="error"){
-         Debug.Log("Á¬½ÓÊ§°Ü£º"+(ErrorCode)int.Parse(msg["errorCode"].ToString()));
+         Debug.Log("è¿æ¥å¤±è´¥ï¼š"+(ErrorCode)int.Parse(msg["errorCode"].ToString()));
      }else{
-         Debug.Log("Token ²»ÕıÈ·»òÒÑ¹ıÆÚ");
+         Debug.Log("Token ä¸æ­£ç¡®æˆ–å·²è¿‡æœŸ");
      }
 }
 void OnDestroy()
 {
-    //ÒÆ³ı¼àÌı
+    //ç§»é™¤ç›‘å¬
     RCEvent.connectionStatusEvent-=connectionStatusEvent;
 }
 ```
 
-### ¶Ï¿ªÁ¬½Ó
+### æ–­å¼€è¿æ¥
 
 ```c
 RongCloud.logout();
 ```
 
-## ÏûÏ¢½Ó¿Ú
+## æ¶ˆæ¯æ¥å£
 
-### ·¢ËÍÏûÏ¢
+### å‘é€æ¶ˆæ¯
 
-ÈÚÔÆÖ§³ÖÏòµ¥ÁÄ¡¢Èº×é¼°ÁÄÌìÊÒÖĞ·¢ËÍÎÄ×ÖÏûÏ¢¡¢Í¼Æ¬ÏûÏ¢¡¢ÓïÒôÏûÏ¢¡¢ÎÄ¼şÏûÏ¢¡¢¸»ÎÄ±¾ÏûÏ¢¡¢µØÀíÎ»ÖÃÏûÏ¢¡£
+èäº‘æ”¯æŒå‘å•èŠã€ç¾¤ç»„åŠèŠå¤©å®¤ä¸­å‘é€æ–‡å­—æ¶ˆæ¯ã€å›¾ç‰‡æ¶ˆæ¯ã€è¯­éŸ³æ¶ˆæ¯ã€æ–‡ä»¶æ¶ˆæ¯ã€å¯Œæ–‡æœ¬æ¶ˆæ¯ã€åœ°ç†ä½ç½®æ¶ˆæ¯ã€‚
 
-#### ·¢ËÍÎÄ±¾ÏûÏ¢
+#### å‘é€æ–‡æœ¬æ¶ˆæ¯
 
 ```c
 void Start()
 {
-    //ÉèÖÃ¼àÌı
+    //è®¾ç½®ç›‘å¬
     RCEvent.sendMessageEvent+=sendMessageEvent;
     RongCloud.connect(token);
 }
 void sendMessageEvent(JsonData msg)
  {
      if(msg["status"].ToString()=="success"&&msg["eventId"]=="eventID"){
-         Debug.Log("·¢ËÍ³É¹¦");
+         Debug.Log("å‘é€æˆåŠŸ");
      }else {
-         Debug.Log("·¢ËÍÊ§°Ü£º"+(ErrorCode)int.Parse(msg["errorCode"].ToString()));
+         Debug.Log("å‘é€å¤±è´¥ï¼š"+(ErrorCode)int.Parse(msg["errorCode"].ToString()));
      }
 }
 void OnDestroy()
 {
-    //ÒÆ³ı¼àÌı
+    //ç§»é™¤ç›‘å¬
     RCEvent.sendMessageEvent-=sendMessageEvent;
 }
 void sendMessage(){
     TextMessage tm = new TextMessage();
     var conversationType = ConversationType.CHATROOM;
-    var targetId = "roomId"; // ¸ù¾İ»á»°ÀàĞÍµÄ²»Í¬£¬¿ÉÒÔÊÇÓÃ»§ ID¡¢ÌÖÂÛ×é ID¡¢×éÈº ID µÈ
+    var targetId = "roomId"; // æ ¹æ®ä¼šè¯ç±»å‹çš„ä¸åŒï¼Œå¯ä»¥æ˜¯ç”¨æˆ· IDã€è®¨è®ºç»„ IDã€ç»„ç¾¤ ID ç­‰
     tm.content = m_message.text;
-    //eventID Ã¿ÌõÏûÏ¢IdÎ¨Ò»£¬ÓÃÓÚÅĞ¶Ï¸ÃÌõÏûÏ¢ÊÇ·ñ·¢ËÍ³É¹¦
+    //eventID æ¯æ¡æ¶ˆæ¯Idå”¯ä¸€ï¼Œç”¨äºåˆ¤æ–­è¯¥æ¡æ¶ˆæ¯æ˜¯å¦å‘é€æˆåŠŸ
     RongCloud.sendMessage(conversationType, targetId, tm, "eventID");
 }
 ```
