@@ -147,3 +147,24 @@ void sendMessage(){
     RongCloud.sendMessage(conversationType, targetId, tm, "eventID");
 }
 ```
+
+### 消息监听
+
+通过添加消息监听器，可以监听到所有接收的消息。
+
+```c
+void Start()
+{
+    RCEvent.onReceiveMessageEvent += receiveMessage;
+}
+void receiveMessage(Message msg,int left)
+{
+    if (msg.objectName == ObjectName.Text)
+    {
+        TextMessage content = (TextMessage)msg.content;
+        Debug.Log("content:"+content.content + "  sender:" + msg.senderUserId);
+    }
+    
+}
+
+```
