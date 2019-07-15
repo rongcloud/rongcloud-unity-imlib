@@ -170,7 +170,8 @@ void sendMessage(){
     RongCloud.sendMessage(conversationType, targetId, tm, "eventID");
 }
 ```
-####发送图片消息
+
+#### 发送图片消息
 
 ```csharp
     ImageMessage imageMessage = new ImageMessage();
@@ -182,7 +183,7 @@ void sendMessage(){
     RongCloud.sendMediaMessage(message, "", "", "eventId");
 ```
 
-####发送文件消息
+#### 发送文件消息
 
 ```csharp
     FileMessage fm = new FileMessage();
@@ -194,7 +195,7 @@ void sendMessage(){
     RongCloud.sendMediaMessage(message, "", "", "eventId");
 ```
 
-####发送位置消息
+#### 发送位置消息
 
 ```csharp
     LocationMessage locationMessage = new LocationMessage();
@@ -209,7 +210,7 @@ void sendMessage(){
     RongCloud.sendMessage(conversationType, targetId, locationMessage, "eventID");
 ```
 
-####发送语音信息
+#### 发送语音信息
 
 融云 Unity SDK 不提供语音录制、转码功能，开发者需要自已实现语音消息录制、转码，通过融云内置的语音消息进行发送。
 
@@ -224,7 +225,7 @@ void sendMessage(){
     RongCloud.sendMessage(conversationType, targetId, voiceMessage, "eventID");
 ```
 
-###插入消息
+### 插入消息
 
 融云 SDK 支持往本地会话插入一条消息，而不往外发送。
 
@@ -237,7 +238,7 @@ void sendMessage(){
      RongCloud.insertOutgoingMessage(conversationType, targetId, SentStatus.FAILED, tm);
 ```
 
-###发送 VoIP Push
+### 发送 VoIP Push
 
 通过 option 设置此消息是否发启 VoIP Push 通知，目前仅支持设置 isVoIPPush，如果对端设备是 iOS，设置 isVoIPPush 为 True，则会发送 VoIP Push，如对端为 Android 设备则正常发送此消息。
 
@@ -245,7 +246,7 @@ void sendMessage(){
     RongCloud.sendMessage(message, pushContent, pushData, true, "eventId");
 ```
 
-###删除消息
+### 删除消息
 
 清空某一会话的所有消息。
 
@@ -272,7 +273,7 @@ void sendMessage(){
     RongCloud.cleanHistoryMessages( conversationType,  targetId,  recordTime,  cleanRemote);
 ```
 
-###获取本地消息历史
+### 获取本地消息历史
 
 ```csharp  
     //获取指定类型，targetId 的N条历史消息记录。通过此接口可以根据情况分段加载历史消息，节省网络资源，提高用户体验。
@@ -286,7 +287,7 @@ void sendMessage(){
 
 ```
 
-###获取服务端历史消息
+### 获取服务端历史消息
 
 提供单聊、群聊、客服的历史消息获取，您每次可以从服务器获取之前 20 条以内的消息历史记录，最多获取前 6 个月的历史消息。
 
@@ -298,7 +299,7 @@ void sendMessage(){
     RongCloud.getRemoteHistoryMessages(conversationType,targetId,dateTime,count);
 ```
 
-###搜索消息
+### 搜索消息
 
 ```csharp  
     RongCloud.searchMessages(conversationType,targetId,keyword,count,beginTime);
@@ -325,27 +326,27 @@ void receiveMessage(Message msg,int left)
 
 ```
 
-##会话管理
+## 会话管理
 
-###获取会话
+### 获取会话
 
 ```csharp  
     RongCloud.getConversation(conversationType,targetId);
 ```
 
-###删除会话
+### 删除会话
 
 ```csharp  
     RongCloud.removeConversation(conversationType,targetId);
 ```
 
-###置顶会话
+### 置顶会话
 
 ```csharp  
     RongCloud.setConversationToTop(conversationType,targetId,true);
 ```
 
-###搜索会话
+### 搜索会话
 
 ```csharp  
     List<ConversationType> types = new List<ConversationType>();
@@ -357,7 +358,7 @@ void receiveMessage(Message msg,int left)
     RongCloud.searchConversations(keyword,types,names);
 ```
 
-###会话文本消息草稿
+### 会话文本消息草稿
 
 这些草稿信息仅存储于本地数据库中，不会上传服务器。
 
@@ -369,7 +370,7 @@ void receiveMessage(Message msg,int left)
     RongCloud.getTextMessageDraft(conversationType, targetId);
 ```
 
-###会话消息提醒
+### 会话消息提醒
 
 通过融云 SDK，您可以设置会话的提醒状态来实现免打扰功能。按照免打扰作用范围，分为两种类型：
 
