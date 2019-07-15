@@ -11,13 +11,21 @@
 }
 
 +(void)SendMessage:(NSString *) callback
-       sendMessage:(NSDictionary *) msg{
+       sendMessage:(id) msg{
     NSDictionary *dict=[[NSMutableDictionary alloc] init];
     [dict setValue:callback forKey:@"callback"];
     [dict setValue:msg forKey:@"data"];
     const char* message=[self MakeStringCopy:[self jsonStringWithDictionary:dict]];
     UnitySendMessage("RongCloud","CommCallback",message);
 }
++(void)SendBoolMessage:(NSString *)callback
+                result:(BOOL)result
+{
+    NSDictionary *retMsg=[RongCloudUnityUtils createDict:@"status" forValue:@"success"];
+    [retMsg setValue:@(result) forKey:@"result"];
+    [RongCloudUnityUtils SendMessage:callback sendMessage:retMsg];
+}
+
 +(char*) MakeStringCopy:(NSString*) nstring{
     if((!nstring)||(nil==nstring)||(nstring==(id)[NSNull null])||(0==nstring.length)){
         return NULL;
@@ -29,6 +37,9 @@
     char* res=(char*)malloc(strlen(string)+1);
     strcpy(res,string);
     return res;
+}
++(NSString *) MakeStringFromChar:(char *)charStr{
+    return [NSString stringWithUTF8String:charStr];
 }
 +(NSDictionary *)createDict:(NSString *)key
                    forValue:(NSObject *)value{
@@ -238,7 +249,7 @@
                                           mentionedContent:mentionedInfo[@"mentionedContent"]];
         }
     }
-
+ //   NSLog(@"content:%@",[self jsonStringWithObject:messageContent]);
     return messageContent;
 }
 +(void)sendCommSuccessCallBack:(NSString *)callback{
@@ -249,12 +260,30 @@
     [msg setValue:code forKey:@"errorCode"];
     [self SendMessage:callback sendMessage:msg];
 }
++(void)sendCommErrorCallBack:(NSString *)callback errCode:(NSObject *)code eventId:(char*)eventId{
+    NSDictionary* msg=[self createDict:@"status" forValue:@"error"];
+    [msg setValue:code forKey:@"errorCode"];
+    [msg setValue:[self MakeStringFromChar:eventId] forKey:@"eventId"];
+    [self SendMessage:callback sendMessage:msg];
+}
 +(void) onSendMessageError:(NSString*) eventId messageId:(long) messageId errcode:(int) errcode{
     NSDictionary *msg=[RongCloudUnityUtils createDict:@"state" forValue:@"error"];
     [msg setValue:eventId forKey:@"eventId"];
     [msg setValue:@(messageId) forKey:@"messageId"];
-    [msg setValue:@(errcode) forKey:@"errcode"];
+    [msg setValue:@(errcode) forKey:@"errorCode"];
     [RongCloudUnityUtils SendMessage:@"SendMessageCallback" sendMessage:msg];
+}
++(NSArray*)getArraryFromString:(NSString*) str{
+    NSData* data=[str dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *e;
+    return [NSJSONSerialization JSONObjectWithData:data options:nil error:&e];
+}
++(NSArray*)getDictionaryByArray:(NSArray *) array{
+    NSMutableArray *arr = [NSMutableArray arrayWithCapacity:array.count];
+    for(int i=0;i<array.count;i++){
+        [arr addObject:[self getDictionaryObjectData:array[i]]];
+    }
+    return arr;
 }
 @end
 

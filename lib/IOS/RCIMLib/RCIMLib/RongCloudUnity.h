@@ -4,7 +4,7 @@
 #import <RongIMLib/RongIMLib.h>
 #import "UnityInterface.h"
 #import "RongCloudUnityUtils.h"
-@interface RongCloudUnity:NSObject<RCIMClientReceiveMessageDelegate,RCConnectionStatusChangeDelegate>
+@interface RongCloudUnity:NSObject<RCIMClientReceiveMessageDelegate,RCConnectionStatusChangeDelegate,RCTypingStatusDelegate,RCChatRoomStatusDelegate,RCLogInfoDelegate,RCRealTimeLocationObserver>
 +(void)Instance;
 @end
 #endif

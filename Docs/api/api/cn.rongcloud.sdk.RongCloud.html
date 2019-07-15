@@ -1,0 +1,3182 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class RongCloud
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class RongCloud
+   ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="cn.rongcloud.sdk.RongCloud">
+  
+  
+  <h1 id="cn_rongcloud_sdk_RongCloud" data-uid="cn.rongcloud.sdk.RongCloud" class="text-break">Class RongCloud
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">RongCloud</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="cn.rongcloud.sdk.html">cn.rongcloud.sdk</a></h6>
+  <h6><strong>Assembly</strong>: Assembly-CSharp.dll</h6>
+  <h5 id="cn_rongcloud_sdk_RongCloud_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class RongCloud</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_addRealTimeLocationListener_" data-uid="cn.rongcloud.sdk.RongCloud.addRealTimeLocationListener*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_addRealTimeLocationListener_cn_rongcloud_sdk_ConversationType_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.addRealTimeLocationListener(cn.rongcloud.sdk.ConversationType,System.String)">addRealTimeLocationListener(ConversationType, String)</h4>
+  <div class="markdown level1 summary"><p>添加位置共享监听。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void addRealTimeLocationListener(ConversationType conversationType, string targetId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>位置共享的会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>位置共享的 targetId。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_addToBlacklist_" data-uid="cn.rongcloud.sdk.RongCloud.addToBlacklist*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_addToBlacklist_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.addToBlacklist(System.String)">addToBlacklist(String)</h4>
+  <div class="markdown level1 summary"><p>将某个用户加到黑名单中。
+<p>当把对方加入黑名单后，对方再发消息时，就会提示“您的消息已经发出, 但被对方拒收”。但您仍然可以给对方发送消息。</p></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void addToBlacklist(string userId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">userId</span></td>
+        <td><p>用户 Id。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_cleanHistoryMessages_" data-uid="cn.rongcloud.sdk.RongCloud.cleanHistoryMessages*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_cleanHistoryMessages_cn_rongcloud_sdk_ConversationType_System_String_System_Int64_System_Boolean_" data-uid="cn.rongcloud.sdk.RongCloud.cleanHistoryMessages(cn.rongcloud.sdk.ConversationType,System.String,System.Int64,System.Boolean)">cleanHistoryMessages(ConversationType, String, Int64, Boolean)</h4>
+  <div class="markdown level1 summary"><p>删除指定时间戳之前的消息，可选择是否同时删除服务器端消息
+此方法从服务器端清除历史消息，但是必须先开通历史消息云存储功能。
+根据会话类型和 TargetId 清除某一会话指定时间戳之前的本地数据库消息（服务端历史消息）,
+清除成功后只能从本地数据库（服务端）获取到该时间戳之后的历史消息。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void cleanHistoryMessages(ConversationType conversationType, string targetId, long recordTime, bool cleanRemote)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>会话目标ID。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">recordTime</span></td>
+        <td><p>清除消息截止时间戳，【0 ~ 当前时间的 Unix 时间戳】。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">cleanRemote</span></td>
+        <td><p>是否删除服务器端消息</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_cleanRemoteHistoryMessages_" data-uid="cn.rongcloud.sdk.RongCloud.cleanRemoteHistoryMessages*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_cleanRemoteHistoryMessages_cn_rongcloud_sdk_ConversationType_System_String_System_Int64_" data-uid="cn.rongcloud.sdk.RongCloud.cleanRemoteHistoryMessages(cn.rongcloud.sdk.ConversationType,System.String,System.Int64)">cleanRemoteHistoryMessages(ConversationType, String, Int64)</h4>
+  <div class="markdown level1 summary"><p>此方法从服务器端清除历史消息，但是必须先开通历史消息云存储功能。</p>
+<p>根据会话类型和 TargetId 清除某一会话指定时间戳之前的服务端历史消息，截止时间戳需要小于等于会话中最后一条消息发送时间，清除成功后只能从服务端获取到该时间戳。之后的历史消息。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void cleanRemoteHistoryMessages(ConversationType conversationType, string targetId, long recordTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>会话目标ID。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">recordTime</span></td>
+        <td><p>清除消息截止时间戳，为 0 则清除会话所有服务端历史消息。【0 ~ 会话中最后一条消息发送时间的 Unix 时间戳】</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_clearMessages_" data-uid="cn.rongcloud.sdk.RongCloud.clearMessages*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_clearMessages_cn_rongcloud_sdk_ConversationType_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.clearMessages(cn.rongcloud.sdk.ConversationType,System.String)">clearMessages(ConversationType, String)</h4>
+  <div class="markdown level1 summary"><p>清空指定类型，targetId 的某一会话所有聊天消息记录。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void clearMessages(ConversationType conversationType, string targetId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>会话类型。不支持传入 ConversationType.CHATROOM。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>目标 Id。根据不同的 conversationType，可能是用户 Id、群组 Id。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_clearMessagesUnreadStatus_" data-uid="cn.rongcloud.sdk.RongCloud.clearMessagesUnreadStatus*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_clearMessagesUnreadStatus_cn_rongcloud_sdk_ConversationType_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.clearMessagesUnreadStatus(cn.rongcloud.sdk.ConversationType,System.String)">clearMessagesUnreadStatus(ConversationType, String)</h4>
+  <div class="markdown level1 summary"><p>清除指定类型，targetId 的某一会话消息未读状态。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void clearMessagesUnreadStatus(ConversationType conversationType, string targetId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>会话类型。不支持传入 ConversationType.CHATROOM。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>目标 Id。根据不同的 conversationType，可能是用户 Id、群组 Id。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_clearMessagesUnreadStatus_" data-uid="cn.rongcloud.sdk.RongCloud.clearMessagesUnreadStatus*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_clearMessagesUnreadStatus_cn_rongcloud_sdk_ConversationType_System_String_System_Int64_" data-uid="cn.rongcloud.sdk.RongCloud.clearMessagesUnreadStatus(cn.rongcloud.sdk.ConversationType,System.String,System.Int64)">clearMessagesUnreadStatus(ConversationType, String, Int64)</h4>
+  <div class="markdown level1 summary"><p>根据时间戳清除指定类型，目标Id 的某一会话消息未读状态。在时间戳之前的消息将被置成已读。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void clearMessagesUnreadStatus(ConversationType conversationType, string targetId, long timestamp)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>会话类型。不支持传入 ConversationType.CHATROOM。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>目标 Id。根据不同的 conversationType，可能是用户 Id、群组 Id。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">timestamp</span></td>
+        <td><p>时间戳。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_connect_" data-uid="cn.rongcloud.sdk.RongCloud.connect*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_connect_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.connect(System.String)">connect(String)</h4>
+  <div class="markdown level1 summary"><p>连接融云服务器，只需要调用一次
+在 App 整个生命周期，您只需要调用一次此方法与融云服务器建立连接。
+之后无论是网络出现异常或者App有前后台的切换等，SDK都会负责自动重连。
+除非您已经手动将连接断开，否则您不需要自己再手动重连。
+通过 RCEvent.connectEvent 获取连接状态信息</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void connect(string token)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">token</span></td>
+        <td><p>从服务端获取的用户身份令牌（Token）。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_deleteMessages_" data-uid="cn.rongcloud.sdk.RongCloud.deleteMessages*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_deleteMessages_cn_rongcloud_sdk_ConversationType_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.deleteMessages(cn.rongcloud.sdk.ConversationType,System.String)">deleteMessages(ConversationType, String)</h4>
+  <div class="markdown level1 summary"><p>清除指定会话的消息。
+此接口会删除指定会话中数据库的所有消息，同时，会清理数据库空间。
+如果数据库特别大，超过几百 M，调用该接口会有少许耗时。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void deleteMessages(ConversationType conversationType, string targetId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>目标 Id。根据不同的 conversationType，可能是用户 Id、群组 Id。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_deleteMessages_" data-uid="cn.rongcloud.sdk.RongCloud.deleteMessages*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_deleteMessages_System_Int32___" data-uid="cn.rongcloud.sdk.RongCloud.deleteMessages(System.Int32[])">deleteMessages(Int32[])</h4>
+  <div class="markdown level1 summary"><p>根据 messageId，删除指定的一条或者一组消息。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void deleteMessages(int[] messagesIds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span>[]</td>
+        <td><span class="parametername">messagesIds</span></td>
+        <td><p>要删除的消息 Id 数组。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_deleteRemoteMessages_" data-uid="cn.rongcloud.sdk.RongCloud.deleteRemoteMessages*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_deleteRemoteMessages_cn_rongcloud_sdk_ConversationType_System_String_cn_rongcloud_sdk_Message___" data-uid="cn.rongcloud.sdk.RongCloud.deleteRemoteMessages(cn.rongcloud.sdk.ConversationType,System.String,cn.rongcloud.sdk.Message[])">deleteRemoteMessages(ConversationType, String, Message[])</h4>
+  <div class="markdown level1 summary"><p>删除指定的一条或者一组消息。会同时删除本地和远端消息。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void deleteRemoteMessages(ConversationType conversationType, string targetId, Message[] messages)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>会话类型。不支持聊天室</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>目标 Id。根据不同的 conversationType，可能是用户 Id、客服 Id。</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.Message.html">Message</a>[]</td>
+        <td><span class="parametername">messages</span></td>
+        <td><p>要删除的消息数组, 数组大小不能超过100条。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_disconnect_" data-uid="cn.rongcloud.sdk.RongCloud.disconnect*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_disconnect" data-uid="cn.rongcloud.sdk.RongCloud.disconnect">disconnect()</h4>
+  <div class="markdown level1 summary"><p>断开与融云服务器的连接。当调用此接口断开连接后，仍然可以接收 Push 消息。
+若想断开连接后不接受 Push 消息，可以调用 logout()</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void disconnect()</code></pre>
+  </div>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_evaluateCustomService_" data-uid="cn.rongcloud.sdk.RongCloud.evaluateCustomService*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_evaluateCustomService_System_String_System_Boolean_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.evaluateCustomService(System.String,System.Boolean,System.String)">evaluateCustomService(String, Boolean, String)</h4>
+  <div class="markdown level1 summary"><p>对机器人客服评价，在机器人模式下使用此方法进行评价</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void evaluateCustomService(string kefuId, bool isRobotResolved, string knowledgeId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">kefuId</span></td>
+        <td><p>客服 id,用户去融云开发者后台申请开通后获得客服Id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">isRobotResolved</span></td>
+        <td><p>robot 客服是否解决了您的问题. true 表示解决 ,false 表示未解决</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">knowledgeId</span></td>
+        <td><p>机器人评价的消息id,同时满足以下4个条件,此参数有效,其余情况可以传空字符串.
+当参数有效时, 取出4中描述的 “sid” 对应的值就是需要传入的knowledgeId,
+1.机器人模式
+2.新收到的消息,不是从数据库中加载的历史消息
+3.CustomServiceConfig 的 robotSessionNoEva 为true  @see {@link io.rong.imlib.CustomServiceConfig }
+这个CustomServiceConfig 是客服启动成功后的回调onSuccess()带回的参数 @see { @link io.rong.imlib.ICustomServiceListener }
+4.MessageContent 的 Extra 中有“robotEva”和“sid”两个字段.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_evaluateCustomService_" data-uid="cn.rongcloud.sdk.RongCloud.evaluateCustomService*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_evaluateCustomService_System_String_System_Int32_cn_rongcloud_sdk_CSEvaSolveStatus_System_String_System_String_System_String_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.evaluateCustomService(System.String,System.Int32,cn.rongcloud.sdk.CSEvaSolveStatus,System.String,System.String,System.String,System.String)">evaluateCustomService(String, Int32, CSEvaSolveStatus, String, String, String, String)</h4>
+  <div class="markdown level1 summary"><p>对人工客服评价，在人工模式下使用此方法进行评价</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void evaluateCustomService(string kefuId, int source, CSEvaSolveStatus solveStatus, string tagText, string suggest, string dialogId, string extra)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">kefuId</span></td>
+        <td><p>客服 id,用户去融云开发者后台申请开通后获得客服Id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>星级，范围 1-5，5为最高,1为最低</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.CSEvaSolveStatus.html">CSEvaSolveStatus</a></td>
+        <td><span class="parametername">solveStatus</span></td>
+        <td><p>解决状态，如果没有解决状态，这里可以随意赋值，SDK不会处理</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">tagText</span></td>
+        <td><p>客户评价的标签</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">suggest</span></td>
+        <td><p>客户的针对人工客服的意见和建议</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">dialogId</span></td>
+        <td><p>对话ID，客服请求评价的对话ID</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">extra</span></td>
+        <td><p>扩展内容</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_getBlacklist_" data-uid="cn.rongcloud.sdk.RongCloud.getBlacklist*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_getBlacklist" data-uid="cn.rongcloud.sdk.RongCloud.getBlacklist">getBlacklist()</h4>
+  <div class="markdown level1 summary"><p>获取当前用户设置的黑名单列表。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void getBlacklist()</code></pre>
+  </div>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_getBlacklistStatus_" data-uid="cn.rongcloud.sdk.RongCloud.getBlacklistStatus*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_getBlacklistStatus_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.getBlacklistStatus(System.String)">getBlacklistStatus(String)</h4>
+  <div class="markdown level1 summary"><p>获取某用户是否在黑名单中。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void getBlacklistStatus(string userId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">userId</span></td>
+        <td><p>用户 Id。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_getChatroomHistoryMessages_" data-uid="cn.rongcloud.sdk.RongCloud.getChatroomHistoryMessages*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_getChatroomHistoryMessages_System_String_System_Int64_System_Int32_cn_rongcloud_sdk_TimestampOrder_" data-uid="cn.rongcloud.sdk.RongCloud.getChatroomHistoryMessages(System.String,System.Int64,System.Int32,cn.rongcloud.sdk.TimestampOrder)">getChatroomHistoryMessages(String, Int64, Int32, TimestampOrder)</h4>
+  <div class="markdown level1 summary"><p>获取聊天室历史消息记录。
+此方法从服务器端获取之前的历史消息，但是必须先开通聊天室消息云存储功能。
+如果指定时间 0,则从存储的第一条消息开始拉取。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void getChatroomHistoryMessages(string targetId, long recordTime, int count, TimestampOrder order)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>目标 Id。根据不同的 conversationType，可能是用户 Id、群组 Id。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">recordTime</span></td>
+        <td><p>起始的消息发送时间戳，单位: 毫秒。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>要获取的消息数量，count 大于 0 ，小于等于 200。</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.TimestampOrder.html">TimestampOrder</a></td>
+        <td><span class="parametername">order</span></td>
+        <td><p>拉取顺序: 降序, 按照时间戳从大到小; 升序, 按照时间戳从小到大。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_getChatRoomInfo_" data-uid="cn.rongcloud.sdk.RongCloud.getChatRoomInfo*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_getChatRoomInfo_System_String_System_Int32_cn_rongcloud_sdk_ChatRoomMemberOrder_" data-uid="cn.rongcloud.sdk.RongCloud.getChatRoomInfo(System.String,System.Int32,cn.rongcloud.sdk.ChatRoomMemberOrder)">getChatRoomInfo(String, Int32, ChatRoomMemberOrder)</h4>
+  <div class="markdown level1 summary"><p>查询聊天室信息，通过 RCEvent.getChatRoomInfoEvent 获取查询数据</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void getChatRoomInfo(string chatRoomId, int defMemberCount, ChatRoomMemberOrder order)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">chatRoomId</span></td>
+        <td><p>聊天室 Id。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">defMemberCount</span></td>
+        <td><p>进入聊天室拉成员数目，最多 20 条。</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ChatRoomMemberOrder.html">ChatRoomMemberOrder</a></td>
+        <td><span class="parametername">order</span></td>
+        <td><p>按照何种顺序返回聊天室成员信息。升序, 返回最早加入的用户列表; 降序, 返回最晚加入的用户列表。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_getConversation_" data-uid="cn.rongcloud.sdk.RongCloud.getConversation*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_getConversation_cn_rongcloud_sdk_ConversationType_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.getConversation(cn.rongcloud.sdk.ConversationType,System.String)">getConversation(ConversationType, String)</h4>
+  <div class="markdown level1 summary"><p>根据不同会话类型的目标 Id，回调方式获取某一会话信息。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void getConversation(ConversationType conversationType, string targetId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>目标 Id。根据不同的 conversationType，可能是用户 Id、群组 Id 或聊天室 Id。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_getConversationList_" data-uid="cn.rongcloud.sdk.RongCloud.getConversationList*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_getConversationList_System_Collections_Generic_List_cn_rongcloud_sdk_ConversationType__" data-uid="cn.rongcloud.sdk.RongCloud.getConversationList(System.Collections.Generic.List{cn.rongcloud.sdk.ConversationType})">getConversationList(List&lt;ConversationType&gt;)</h4>
+  <div class="markdown level1 summary"><p>根据会话类型，获取当前用户的本地会话列表。即显示所有本地数据库中收发过消息,并且未被删除的会话。
+<strong>注意：</strong>当更换设备或者清除缓存后，能拉取到暂存在融云服务器中该账号当天收发过消息的会话。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void getConversationList(List&lt;ConversationType&gt; conversationTypes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a>&gt;</td>
+        <td><span class="parametername">conversationTypes</span></td>
+        <td><p>选择要获取的会话类型。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_getConversationListByPage_" data-uid="cn.rongcloud.sdk.RongCloud.getConversationListByPage*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_getConversationListByPage_System_Int64_System_Int32_System_Collections_Generic_List_cn_rongcloud_sdk_ConversationType__" data-uid="cn.rongcloud.sdk.RongCloud.getConversationListByPage(System.Int64,System.Int32,System.Collections.Generic.List{cn.rongcloud.sdk.ConversationType})">getConversationListByPage(Int64, Int32, List&lt;ConversationType&gt;)</h4>
+  <div class="markdown level1 summary"><p>分页获取会话列表</p>
+<p><strong>注意：</strong>当更换设备或者清除缓存后，能拉取到暂存在融云服务器中该账号当天收发过消息的会话。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void getConversationListByPage(long timeStamp, int count, List&lt;ConversationType&gt; conversationTypes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">timeStamp</span></td>
+        <td><p>时间戳，获取从此时间戳往前的会话，第一次传 0</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>取回的会话个数。当实际取回的会话个数小于 count 值时，表明已取完数据</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a>&gt;</td>
+        <td><span class="parametername">conversationTypes</span></td>
+        <td><p>选择要获取的会话类型</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_getConversationNotificationStatus_" data-uid="cn.rongcloud.sdk.RongCloud.getConversationNotificationStatus*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_getConversationNotificationStatus_cn_rongcloud_sdk_ConversationType_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.getConversationNotificationStatus(cn.rongcloud.sdk.ConversationType,System.String)">getConversationNotificationStatus(ConversationType, String)</h4>
+  <div class="markdown level1 summary"><p>获取会话消息提醒状态。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void getConversationNotificationStatus(ConversationType conversationType, string targetId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>目标 Id。根据不同的 conversationType，可能是用户 Id、群组 Id。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_getCurrentConnectionStatus_" data-uid="cn.rongcloud.sdk.RongCloud.getCurrentConnectionStatus*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_getCurrentConnectionStatus" data-uid="cn.rongcloud.sdk.RongCloud.getCurrentConnectionStatus">getCurrentConnectionStatus()</h4>
+  <div class="markdown level1 summary"><p>得到当前连接状态</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ConnectionStatus getCurrentConnectionStatus()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConnectionStatus.html">ConnectionStatus</a></td>
+        <td><p>连接状态枚举。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_getCurrentUserId_" data-uid="cn.rongcloud.sdk.RongCloud.getCurrentUserId*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_getCurrentUserId" data-uid="cn.rongcloud.sdk.RongCloud.getCurrentUserId">getCurrentUserId()</h4>
+  <div class="markdown level1 summary"><p>获取当前连接用户的信息。等同于 connect(String, ConnectCallback) 成功后返回的 userId。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string getCurrentUserId()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>当前连接用户的信息。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_getHistoryMessages_" data-uid="cn.rongcloud.sdk.RongCloud.getHistoryMessages*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_getHistoryMessages_cn_rongcloud_sdk_ConversationType_System_String_System_Int32_System_Int32_" data-uid="cn.rongcloud.sdk.RongCloud.getHistoryMessages(cn.rongcloud.sdk.ConversationType,System.String,System.Int32,System.Int32)">getHistoryMessages(ConversationType, String, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>获取指定类型，targetId 的N条历史消息记录。通过此接口可以根据情况分段加载历史消息，节省网络资源，提高用户体验。
+该接口不支持拉取聊天室历史消息。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void getHistoryMessages(ConversationType conversationType, string targetId, int oldestMessageId, int count)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>目标 Id。根据不同的 conversationType，可能是用户 Id、群组 Id。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">oldestMessageId</span></td>
+        <td><p>最后一条消息的 Id，获取此消息之前的 count 条消息，没有消息第一次调用应设置为:-1。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>要获取的消息数量。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_getHistoryMessages_" data-uid="cn.rongcloud.sdk.RongCloud.getHistoryMessages*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_getHistoryMessages_cn_rongcloud_sdk_ConversationType_System_String_System_Int64_System_Int32_System_Int32_" data-uid="cn.rongcloud.sdk.RongCloud.getHistoryMessages(cn.rongcloud.sdk.ConversationType,System.String,System.Int64,System.Int32,System.Int32)">getHistoryMessages(ConversationType, String, Int64, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>获取某会话中指定消息的前 before 数量和 after 数量的消息。
+返回的消息列表中会包含指定的消息。消息列表时间顺序从新到旧。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void getHistoryMessages(ConversationType conversationType, string targetId, long sentTime, int before, int after)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>指定的会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>指定的会话 id。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">sentTime</span></td>
+        <td><p>指定消息的发送时间，不能为0。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">before</span></td>
+        <td><p>指定消息的前部分消息数量。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">after</span></td>
+        <td><p>指定消息的后部分消息数量。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_getHistoryMessages_" data-uid="cn.rongcloud.sdk.RongCloud.getHistoryMessages*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_getHistoryMessages_cn_rongcloud_sdk_ConversationType_System_String_System_String_System_Int32_System_Int32_" data-uid="cn.rongcloud.sdk.RongCloud.getHistoryMessages(cn.rongcloud.sdk.ConversationType,System.String,System.String,System.Int32,System.Int32)">getHistoryMessages(ConversationType, String, String, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>获取本地数据库中保存，特定类型，targetId 的N条历史消息记录。通过此接口可以根据情况分段加载历史消息，节省网络资源，提高用户体验。
+该接口不支持拉取聊天室历史消息。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void getHistoryMessages(ConversationType conversationType, string targetId, string objectName, int oldestMessageId, int count)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>目标 Id。根据不同的 conversationType，可能是用户 Id、群组 Id。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">objectName</span></td>
+        <td><p>消息类型标识。比如文本消息&quot;RC:TxtMsg&quot;, 图片消息&quot;RC:ImgMsg&quot;, 或者您自定义消息的 MessageTag 中 value 的值。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">oldestMessageId</span></td>
+        <td><p>最后一条消息的 Id，获取此消息之前的 count 条消息，没有消息第一次调用应设置为:-1。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>要获取的消息数量。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_getHistoryMessages_" data-uid="cn.rongcloud.sdk.RongCloud.getHistoryMessages*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_getHistoryMessages_cn_rongcloud_sdk_ConversationType_System_String_System_String_System_Int32_System_Int32_cn_rongcloud_sdk_GetMessageDirection_" data-uid="cn.rongcloud.sdk.RongCloud.getHistoryMessages(cn.rongcloud.sdk.ConversationType,System.String,System.String,System.Int32,System.Int32,cn.rongcloud.sdk.GetMessageDirection)">getHistoryMessages(ConversationType, String, String, Int32, Int32, GetMessageDirection)</h4>
+  <div class="markdown level1 summary"><p>根据会话类型的目标 Id，回调方式获取某消息类型的某条消息之前或之后的N条历史消息记录。如： 要获取messageId为22的之前的10条图片消息，
+则相应参数为 getHistoryMessages(conversationType, targetId, &quot;RC:ImgMsg&quot;, 22, 10, true)。
+注意：返回的消息列表里面不包含oldestMessageId本身。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void getHistoryMessages(ConversationType conversationType, string targetId, string objectName, int baseMessageId, int count, GetMessageDirection direction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>会话类型。不支持传入 ConversationType.CHATROOM。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>目标 Id。根据不同的 conversationType，可能是用户 Id、群组 Id。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">objectName</span></td>
+        <td><p>消息类型标识。如RC:TxtMsg，RC:ImgMsg，RC:VcMsg等。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">baseMessageId</span></td>
+        <td><p>最后一条消息的 Id，获取此消息之前的 count 条消息,没有消息第一次调用应设置为:-1。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>要获取的消息数量</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.GetMessageDirection.html">GetMessageDirection</a></td>
+        <td><span class="parametername">direction</span></td>
+        <td><p>要获取的消息相对于 oldestMessageId 的方向 GetMessageDirection
+以指定的 message id 作为获取的起始点，时间早于该 id 则为 FRONT，晚于则为 BEHIND。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_getOfflineMessageDuration_" data-uid="cn.rongcloud.sdk.RongCloud.getOfflineMessageDuration*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_getOfflineMessageDuration" data-uid="cn.rongcloud.sdk.RongCloud.getOfflineMessageDuration">getOfflineMessageDuration()</h4>
+  <div class="markdown level1 summary"><p>获取当前用户离线消息时间</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void getOfflineMessageDuration()</code></pre>
+  </div>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_getRealTimeLocationCurrentState_" data-uid="cn.rongcloud.sdk.RongCloud.getRealTimeLocationCurrentState*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_getRealTimeLocationCurrentState_cn_rongcloud_sdk_ConversationType_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.getRealTimeLocationCurrentState(cn.rongcloud.sdk.ConversationType,System.String)">getRealTimeLocationCurrentState(ConversationType, String)</h4>
+  <div class="markdown level1 summary"><p>获取位置共享状态。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void getRealTimeLocationCurrentState(ConversationType conversationType, string targetId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>位置共享的会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>位置共享的 targetId。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_getRealTimeLocationParticipants_" data-uid="cn.rongcloud.sdk.RongCloud.getRealTimeLocationParticipants*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_getRealTimeLocationParticipants_cn_rongcloud_sdk_ConversationType_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.getRealTimeLocationParticipants(cn.rongcloud.sdk.ConversationType,System.String)">getRealTimeLocationParticipants(ConversationType, String)</h4>
+  <div class="markdown level1 summary"><p>获取参与该位置共享的所有成员。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void getRealTimeLocationParticipants(ConversationType conversationType, string targetId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>位置共享的会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>位置共享的 targetId。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_getRemoteHistoryMessages_" data-uid="cn.rongcloud.sdk.RongCloud.getRemoteHistoryMessages*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_getRemoteHistoryMessages_cn_rongcloud_sdk_ConversationType_System_String_System_Int64_System_Int32_" data-uid="cn.rongcloud.sdk.RongCloud.getRemoteHistoryMessages(cn.rongcloud.sdk.ConversationType,System.String,System.Int64,System.Int32)">getRemoteHistoryMessages(ConversationType, String, Int64, Int32)</h4>
+  <div class="markdown level1 summary"><p><p>获取融云服务器中暂存，特定类型，targetId 的N条（一次不超过20条）历史消息记录。通过此接口可以根据情况分段加载历史消息，节省网络资源，提高用户体验。</p>
+区别于 {@link #getHistoryMessages}，该接口是从融云服务器中拉取。通常用于更换新设备后，拉取历史消息。
+公众服务会话 ConversationType#APP_PUBLIC_SERVICE ConversationType#PUBLIC_SERVICE</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void getRemoteHistoryMessages(ConversationType conversationType, string targetId, long dateTime, int count)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">dateTime</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_getTextMessageDraft_" data-uid="cn.rongcloud.sdk.RongCloud.getTextMessageDraft*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_getTextMessageDraft_cn_rongcloud_sdk_ConversationType_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.getTextMessageDraft(cn.rongcloud.sdk.ConversationType,System.String)">getTextMessageDraft(ConversationType, String)</h4>
+  <div class="markdown level1 summary"><p>根据消息类型，targetId 获取某一会话的文字消息草稿。用于获取用户输入但未发送的暂存消息。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void getTextMessageDraft(ConversationType conversationType, string targetId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>目标 Id。根据不同的 conversationType，可能是用户 Id、群组 Id 或聊天室 Id。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_getTotalUnreadCount_" data-uid="cn.rongcloud.sdk.RongCloud.getTotalUnreadCount*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_getTotalUnreadCount" data-uid="cn.rongcloud.sdk.RongCloud.getTotalUnreadCount">getTotalUnreadCount()</h4>
+  <div class="markdown level1 summary"><p>通过回调方式，获取所有未读消息数。即除了聊天室之外其它所有会话类型的未读消息数。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void getTotalUnreadCount()</code></pre>
+  </div>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_getTotalUnreadCount_" data-uid="cn.rongcloud.sdk.RongCloud.getTotalUnreadCount*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_getTotalUnreadCount_System_Collections_Generic_List_cn_rongcloud_sdk_Conversation__" data-uid="cn.rongcloud.sdk.RongCloud.getTotalUnreadCount(System.Collections.Generic.List{cn.rongcloud.sdk.Conversation})">getTotalUnreadCount(List&lt;Conversation&gt;)</h4>
+  <div class="markdown level1 summary"><p>通过回调方式，获取所有指定会话的未读消息数（聊天室除外）。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void getTotalUnreadCount(List&lt;Conversation&gt; conversations)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="cn.rongcloud.sdk.Conversation.html">Conversation</a>&gt;</td>
+        <td><span class="parametername">conversations</span></td>
+        <td><p>需要获取未读数的指定会话。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_getUnreadCount_" data-uid="cn.rongcloud.sdk.RongCloud.getUnreadCount*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_getUnreadCount_cn_rongcloud_sdk_ConversationType_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.getUnreadCount(cn.rongcloud.sdk.ConversationType,System.String)">getUnreadCount(ConversationType, String)</h4>
+  <div class="markdown level1 summary"><p>根据会话类型的目标 Id，回调方式获取来自某用户（某会话）的未读消息数。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void getUnreadCount(ConversationType conversationType, string targetId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>目标 Id。根据不同的 conversationType，可能是用户 Id、群组 Id。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_getUnreadCount_" data-uid="cn.rongcloud.sdk.RongCloud.getUnreadCount*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_getUnreadCount_System_Collections_Generic_List_cn_rongcloud_sdk_ConversationType__" data-uid="cn.rongcloud.sdk.RongCloud.getUnreadCount(System.Collections.Generic.List{cn.rongcloud.sdk.ConversationType})">getUnreadCount(List&lt;ConversationType&gt;)</h4>
+  <div class="markdown level1 summary"><p>回调方式获取某会话类型的未读消息数。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void getUnreadCount(List&lt;ConversationType&gt; conversationTypes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a>&gt;</td>
+        <td><span class="parametername">conversationTypes</span></td>
+        <td><p>会话类型。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_getUnreadCount_" data-uid="cn.rongcloud.sdk.RongCloud.getUnreadCount*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_getUnreadCount_System_Collections_Generic_List_cn_rongcloud_sdk_ConversationType__System_Boolean_" data-uid="cn.rongcloud.sdk.RongCloud.getUnreadCount(System.Collections.Generic.List{cn.rongcloud.sdk.ConversationType},System.Boolean)">getUnreadCount(List&lt;ConversationType&gt;, Boolean)</h4>
+  <div class="markdown level1 summary"><p>回调方式获取某会话类型的未读消息数。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void getUnreadCount(List&lt;ConversationType&gt; conversationTypes, bool containBlocked)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a>&gt;</td>
+        <td><span class="parametername">conversationTypes</span></td>
+        <td><p>会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">containBlocked</span></td>
+        <td><p>未读消息数的回调。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_getUnreadMentionedMessages_" data-uid="cn.rongcloud.sdk.RongCloud.getUnreadMentionedMessages*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_getUnreadMentionedMessages_cn_rongcloud_sdk_ConversationType_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.getUnreadMentionedMessages(cn.rongcloud.sdk.ConversationType,System.String)">getUnreadMentionedMessages(ConversationType, String)</h4>
+  <div class="markdown level1 summary"><p>获取某会话里未读的@消息。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void getUnreadMentionedMessages(ConversationType conversationType, string targetId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>目标 Id。根据不同的 conversationType，可能是用户 Id、群组 Id。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_init_" data-uid="cn.rongcloud.sdk.RongCloud.init*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_init_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.init(System.String)">init(String)</h4>
+  <div class="markdown level1 summary"><p>初始化 SDK，只需要调用一次</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void init(string appKey)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">appKey</span></td>
+        <td><p>从融云开发者平台创建应用后获取到的 App Key</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_insertIncomingMessage_" data-uid="cn.rongcloud.sdk.RongCloud.insertIncomingMessage*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_insertIncomingMessage_cn_rongcloud_sdk_ConversationType_System_String_System_String_cn_rongcloud_sdk_ReceivedStatus_cn_rongcloud_sdk_MessageContent_" data-uid="cn.rongcloud.sdk.RongCloud.insertIncomingMessage(cn.rongcloud.sdk.ConversationType,System.String,System.String,cn.rongcloud.sdk.ReceivedStatus,cn.rongcloud.sdk.MessageContent)">insertIncomingMessage(ConversationType, String, String, ReceivedStatus, MessageContent)</h4>
+  <div class="markdown level1 summary"><p>向本地会话中插入一条消息，方向为接收。这条消息只是插入本地会话，不会实际发送给服务器和对方。 该消息不一定插入本地数据库，是否入库由消息的属性决定。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void insertIncomingMessage(ConversationType type, string targetId, string senderUserId, ReceivedStatus receivedStatus, MessageContent content)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>目标会话Id。比如私人会话时，是对方的id； 群组会话时，是群id; 讨论组会话时，则为该讨论组的id.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">senderUserId</span></td>
+        <td><p>发送方 Id</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ReceivedStatus.html">ReceivedStatus</a></td>
+        <td><span class="parametername">receivedStatus</span></td>
+        <td><p>接收状态</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.MessageContent.html">MessageContent</a></td>
+        <td><span class="parametername">content</span></td>
+        <td><p>消息内容。如TextMessage ImageMessage等。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_insertIncomingMessage_" data-uid="cn.rongcloud.sdk.RongCloud.insertIncomingMessage*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_insertIncomingMessage_cn_rongcloud_sdk_ConversationType_System_String_System_String_cn_rongcloud_sdk_ReceivedStatus_cn_rongcloud_sdk_MessageContent_System_Int64_" data-uid="cn.rongcloud.sdk.RongCloud.insertIncomingMessage(cn.rongcloud.sdk.ConversationType,System.String,System.String,cn.rongcloud.sdk.ReceivedStatus,cn.rongcloud.sdk.MessageContent,System.Int64)">insertIncomingMessage(ConversationType, String, String, ReceivedStatus, MessageContent, Int64)</h4>
+  <div class="markdown level1 summary"><p>向本地会话中插入一条消息，方向为接收。这条消息只是插入本地会话，不会实际发送给服务器和对方。 该消息不一定插入本地数据库，是否入库由消息的属性决定。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void insertIncomingMessage(ConversationType type, string targetId, string senderUserId, ReceivedStatus receivedStatus, MessageContent content, long sentTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>目标会话Id。比如私人会话时，是对方的id； 群组会话时，是群id; 讨论组会话时，则为该讨论组的id.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">senderUserId</span></td>
+        <td><p>发送方 Id</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ReceivedStatus.html">ReceivedStatus</a></td>
+        <td><span class="parametername">receivedStatus</span></td>
+        <td><p>接收状态</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.MessageContent.html">MessageContent</a></td>
+        <td><span class="parametername">content</span></td>
+        <td><p>消息内容。如TextMessage ImageMessage等。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">sentTime</span></td>
+        <td><p>消息的发送时间。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_insertOutgoingMessage_" data-uid="cn.rongcloud.sdk.RongCloud.insertOutgoingMessage*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_insertOutgoingMessage_cn_rongcloud_sdk_ConversationType_System_String_cn_rongcloud_sdk_SentStatus_cn_rongcloud_sdk_MessageContent_" data-uid="cn.rongcloud.sdk.RongCloud.insertOutgoingMessage(cn.rongcloud.sdk.ConversationType,System.String,cn.rongcloud.sdk.SentStatus,cn.rongcloud.sdk.MessageContent)">insertOutgoingMessage(ConversationType, String, SentStatus, MessageContent)</h4>
+  <div class="markdown level1 summary"><p>向本地会话中插入一条消息，方向为发送。这条消息只是插入本地会话，不会实际发送给服务器和对方。 该消息不一定插入本地数据库，是否入库由消息的属性决定。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void insertOutgoingMessage(ConversationType type, string targetId, SentStatus sentStatus, MessageContent content)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>目标会话Id。比如私人会话时，是对方的id； 群组会话时，是群id; 讨论组会话时，则为该讨论组的id.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.SentStatus.html">SentStatus</a></td>
+        <td><span class="parametername">sentStatus</span></td>
+        <td><p>发送状态</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.MessageContent.html">MessageContent</a></td>
+        <td><span class="parametername">content</span></td>
+        <td><p>消息内容。如TextMessage ImageMessage等。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_insertOutgoingMessage_" data-uid="cn.rongcloud.sdk.RongCloud.insertOutgoingMessage*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_insertOutgoingMessage_cn_rongcloud_sdk_ConversationType_System_String_cn_rongcloud_sdk_SentStatus_cn_rongcloud_sdk_MessageContent_System_Int64_" data-uid="cn.rongcloud.sdk.RongCloud.insertOutgoingMessage(cn.rongcloud.sdk.ConversationType,System.String,cn.rongcloud.sdk.SentStatus,cn.rongcloud.sdk.MessageContent,System.Int64)">insertOutgoingMessage(ConversationType, String, SentStatus, MessageContent, Int64)</h4>
+  <div class="markdown level1 summary"><p>向本地会话中插入一条消息，方向为发送。这条消息只是插入本地会话，不会实际发送给服务器和对方。 该消息不一定插入本地数据库，是否入库由消息的属性决定。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void insertOutgoingMessage(ConversationType type, string targetId, SentStatus sentStatus, MessageContent content, long sentTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>目标会话Id。比如私人会话时，是对方的id； 群组会话时，是群id; 讨论组会话时，则为该讨论组的id.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.SentStatus.html">SentStatus</a></td>
+        <td><span class="parametername">sentStatus</span></td>
+        <td><p>发送状态</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.MessageContent.html">MessageContent</a></td>
+        <td><span class="parametername">content</span></td>
+        <td><p>消息内容。如TextMessage ImageMessage等。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">sentTime</span></td>
+        <td><p>消息的发送时间。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_joinChatRoom_" data-uid="cn.rongcloud.sdk.RongCloud.joinChatRoom*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_joinChatRoom_System_String_System_Int32_" data-uid="cn.rongcloud.sdk.RongCloud.joinChatRoom(System.String,System.Int32)">joinChatRoom(String, Int32)</h4>
+  <div class="markdown level1 summary"><p>加入聊天室。如果聊天室不存在，sdk 会创建聊天室并加入，如果已存在，则直接加入。加入聊天室时，可以选择拉取聊天室消息数目。
+通过 RCEvent.joinChatRoomEvent 获取回调信息。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void joinChatRoom(string chatRoomId, int defMessageCount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">chatRoomId</span></td>
+        <td><p>聊天室 Id。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">defMessageCount</span></td>
+        <td><p>进入聊天室拉取消息数目，-1 时不拉取任何消息，0 时拉取 10 条消息，最多只能拉取 50 条。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_joinExistChatRoom_" data-uid="cn.rongcloud.sdk.RongCloud.joinExistChatRoom*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_joinExistChatRoom_System_String_System_Int32_" data-uid="cn.rongcloud.sdk.RongCloud.joinExistChatRoom(System.String,System.Int32)">joinExistChatRoom(String, Int32)</h4>
+  <div class="markdown level1 summary"><p>加入已存在的聊天室。如果聊天室不存在，则加入失败。加入聊天室时，可以选择拉取聊天室消息数目。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void joinExistChatRoom(string chatRoomId, int defMessageCount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">chatRoomId</span></td>
+        <td><p>聊天室 Id。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">defMessageCount</span></td>
+        <td><p>进入聊天室拉取消息数目，-1 时不拉取任何消息，0 时拉取 10 条消息，最多只能拉取 50 条。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_joinRealTimeLocation_" data-uid="cn.rongcloud.sdk.RongCloud.joinRealTimeLocation*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_joinRealTimeLocation_cn_rongcloud_sdk_ConversationType_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.joinRealTimeLocation(cn.rongcloud.sdk.ConversationType,System.String)">joinRealTimeLocation(ConversationType, String)</h4>
+  <div class="markdown level1 summary"><p>加入位置共享。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void joinRealTimeLocation(ConversationType conversationType, string targetId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>位置共享的会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>位置共享的 targetId。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_logout_" data-uid="cn.rongcloud.sdk.RongCloud.logout*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_logout" data-uid="cn.rongcloud.sdk.RongCloud.logout">logout()</h4>
+  <div class="markdown level1 summary"><p>断开与融云服务器的连接，并且不再接收 Push 消息。
+若想断开连接后仍然接受 Push 消息，可以调用 disconnect()</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void logout()</code></pre>
+  </div>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_quitChatRoom_" data-uid="cn.rongcloud.sdk.RongCloud.quitChatRoom*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_quitChatRoom_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.quitChatRoom(System.String)">quitChatRoom(String)</h4>
+  <div class="markdown level1 summary"><p>退出聊天室。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void quitChatRoom(string chatRoomId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">chatRoomId</span></td>
+        <td><p>聊天室 Id。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_quitRealTimeLocation_" data-uid="cn.rongcloud.sdk.RongCloud.quitRealTimeLocation*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_quitRealTimeLocation_cn_rongcloud_sdk_ConversationType_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.quitRealTimeLocation(cn.rongcloud.sdk.ConversationType,System.String)">quitRealTimeLocation(ConversationType, String)</h4>
+  <div class="markdown level1 summary"><p>退出位置共享。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void quitRealTimeLocation(ConversationType conversationType, string targetId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>位置共享的会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>位置共享的 targetId。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_recallMessage_" data-uid="cn.rongcloud.sdk.RongCloud.recallMessage*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_recallMessage_System_Int32_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.recallMessage(System.Int32,System.String)">recallMessage(Int32, String)</h4>
+  <div class="markdown level1 summary"><p>撤回消息</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void recallMessage(int messageId, string pushContent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">messageId</span></td>
+        <td><p>将被撤回的消息 Id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pushContent</span></td>
+        <td><p>推送内容</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_removeConversation_" data-uid="cn.rongcloud.sdk.RongCloud.removeConversation*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_removeConversation_cn_rongcloud_sdk_ConversationType_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.removeConversation(cn.rongcloud.sdk.ConversationType,System.String)">removeConversation(ConversationType, String)</h4>
+  <div class="markdown level1 summary"><p>从会话列表中移除某一会话，但是不删除会话内的消息。</p>
+<p>如果此会话中有新的消息，该会话将重新在会话列表中显示，并显示最近的历史消息。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void removeConversation(ConversationType conversationType, string targetId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>目标 Id。根据不同的 conversationType，可能是用户 Id、群组 Id 或聊天室 Id。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_removeFromBlacklist_" data-uid="cn.rongcloud.sdk.RongCloud.removeFromBlacklist*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_removeFromBlacklist_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.removeFromBlacklist(System.String)">removeFromBlacklist(String)</h4>
+  <div class="markdown level1 summary"><p>将个某用户从黑名单中移出。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void removeFromBlacklist(string userId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">userId</span></td>
+        <td><p>用户 Id。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_removeNotificationQuietHours_" data-uid="cn.rongcloud.sdk.RongCloud.removeNotificationQuietHours*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_removeNotificationQuietHours" data-uid="cn.rongcloud.sdk.RongCloud.removeNotificationQuietHours">removeNotificationQuietHours()</h4>
+  <div class="markdown level1 summary"><p>移除消息通知免打扰时间。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void removeNotificationQuietHours()</code></pre>
+  </div>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_removeRealTimeLocationObserver_" data-uid="cn.rongcloud.sdk.RongCloud.removeRealTimeLocationObserver*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_removeRealTimeLocationObserver_cn_rongcloud_sdk_ConversationType_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.removeRealTimeLocationObserver(cn.rongcloud.sdk.ConversationType,System.String)">removeRealTimeLocationObserver(ConversationType, String)</h4>
+  <div class="markdown level1 summary"><p>移除位置共享监听</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void removeRealTimeLocationObserver(ConversationType conversationType, string targetId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>会话类型</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>位置共享的会话 id</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_saveTextMessageDraft_" data-uid="cn.rongcloud.sdk.RongCloud.saveTextMessageDraft*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_saveTextMessageDraft_cn_rongcloud_sdk_ConversationType_System_String_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.saveTextMessageDraft(cn.rongcloud.sdk.ConversationType,System.String,System.String)">saveTextMessageDraft(ConversationType, String, String)</h4>
+  <div class="markdown level1 summary"><p>根据消息类型，targetId 保存某一会话的文字消息草稿。用于暂存用户输入但未发送的消息。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void saveTextMessageDraft(ConversationType conversationType, string targetId, string content)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>目标 Id。根据不同的 conversationType，可能是用户 Id、群组 Id 或聊天室 Id。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">content</span></td>
+        <td><p>草稿的文字内容。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_searchConversations_" data-uid="cn.rongcloud.sdk.RongCloud.searchConversations*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_searchConversations_System_String_System_Collections_Generic_List_cn_rongcloud_sdk_ConversationType__System_Collections_Generic_List_System_String__" data-uid="cn.rongcloud.sdk.RongCloud.searchConversations(System.String,System.Collections.Generic.List{cn.rongcloud.sdk.ConversationType},System.Collections.Generic.List{System.String})">searchConversations(String, List&lt;ConversationType&gt;, List&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>搜索本地历史消息。
+此接口可快速返回匹配的会话列表,并且会话中包含已匹配的消息数量。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void searchConversations(string keyword, List&lt;ConversationType&gt; conversationTypes, List&lt;string&gt; objectNames)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">keyword</span></td>
+        <td><p>搜索的关键字。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a>&gt;</td>
+        <td><span class="parametername">conversationTypes</span></td>
+        <td><p>搜索的会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">objectNames</span></td>
+        <td><p>搜索的消息类型,例如:RC:TxtMsg。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_searchMessages_" data-uid="cn.rongcloud.sdk.RongCloud.searchMessages*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_searchMessages_cn_rongcloud_sdk_ConversationType_System_String_System_String_System_Int32_System_Int64_" data-uid="cn.rongcloud.sdk.RongCloud.searchMessages(cn.rongcloud.sdk.ConversationType,System.String,System.String,System.Int32,System.Int64)">searchMessages(ConversationType, String, String, Int32, Int64)</h4>
+  <div class="markdown level1 summary"><p>根据会话,搜索本地历史消息。
+搜索结果可分页返回。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void searchMessages(ConversationType conversationType, string targetId, string keyword, int count, long beginTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>指定的会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>指定的会话 id。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">keyword</span></td>
+        <td><p>搜索的关键字。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>返回的搜索结果数量, 传0时会返回所有搜索到的消息, 非0时,逐页返回。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">beginTime</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_searchMessagesByUser_" data-uid="cn.rongcloud.sdk.RongCloud.searchMessagesByUser*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_searchMessagesByUser_cn_rongcloud_sdk_ConversationType_System_String_System_String_System_Int32_System_Int64_" data-uid="cn.rongcloud.sdk.RongCloud.searchMessagesByUser(cn.rongcloud.sdk.ConversationType,System.String,System.String,System.Int32,System.Int64)">searchMessagesByUser(ConversationType, String, String, Int32, Int64)</h4>
+  <div class="markdown level1 summary"><p>根据会话,搜索本地历史消息。
+搜索结果可分页返回。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void searchMessagesByUser(ConversationType conversationType, string targetId, string userId, int count, long beginTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>指定的会话类型, 目前只支持群组。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>指定的会话 id。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">userId</span></td>
+        <td><p>用户 id。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>返回的搜索结果数量, 0 大于 count 小于等于 100。如果count &gt; 100，则最大返回 100</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">beginTime</span></td>
+        <td><p>查询记录的起始时间, 传0时从最新消息开始搜索。从该时间往前搜索。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_selectCustomServiceGroup_" data-uid="cn.rongcloud.sdk.RongCloud.selectCustomServiceGroup*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_selectCustomServiceGroup_System_String_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.selectCustomServiceGroup(System.String,System.String)">selectCustomServiceGroup(String, String)</h4>
+  <div class="markdown level1 summary"><p>根据客服ID和分组ID转换人工模式</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void selectCustomServiceGroup(string kefuId, string groupId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">kefuId</span></td>
+        <td><p>客服ID</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">groupId</span></td>
+        <td><p>分组ID</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_sendDirectionalMessage_" data-uid="cn.rongcloud.sdk.RongCloud.sendDirectionalMessage*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_sendDirectionalMessage_cn_rongcloud_sdk_ConversationType_System_String_cn_rongcloud_sdk_MessageContent_System_String_System_String_System_Collections_Generic_List_System_String__System_String_" data-uid="cn.rongcloud.sdk.RongCloud.sendDirectionalMessage(cn.rongcloud.sdk.ConversationType,System.String,cn.rongcloud.sdk.MessageContent,System.String,System.String,System.Collections.Generic.List{System.String},System.String)">sendDirectionalMessage(ConversationType, String, MessageContent, String, String, List&lt;String&gt;, String)</h4>
+  <div class="markdown level1 summary"><p>根据会话类型，发送消息。
+在 RCEvent.sendMessageEvent 事件中获取发送成功、失败消息</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void sendDirectionalMessage(ConversationType type, string targetId, MessageContent content, string pushContent, string pushData, List&lt;string&gt; userIds, string eventId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>目标 Id。只能是群组 Id。</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.MessageContent.html">MessageContent</a></td>
+        <td><span class="parametername">content</span></td>
+        <td><p>消息内容，例如 TextMessage, ImageMessage。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pushContent</span></td>
+        <td><p>当下发 push 消息时，在通知栏里会显示这个字段。 如果发送的是自定义消息，该字段必须填写，否则无法收到 push 消息。 如果发送 sdk 中默认的消息类型，例如 RC:TxtMsg, RC:VcMsg, RC:ImgMsg，则不需要填写，默认已经指定。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pushData</span></td>
+        <td><p>push 附加信息。如果设置该字段，用户在收到 push 消息时，能通过 PushNotificationMessage.getPushData() 方法获取。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">userIds</span></td>
+        <td><p>群组会话中将会接收到此消息的用户列表。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">eventId</span></td>
+        <td><p>发送消息的回调事件 Id</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_sendMediaMessage_" data-uid="cn.rongcloud.sdk.RongCloud.sendMediaMessage*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_sendMediaMessage_cn_rongcloud_sdk_Message_System_String_System_String_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.sendMediaMessage(cn.rongcloud.sdk.Message,System.String,System.String,System.String)">sendMediaMessage(Message, String, String, String)</h4>
+  <div class="markdown level1 summary"><p>发送消息。
+在 RCEvent.sendMessageEvent 事件中获取发送成功、失败消息</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void sendMediaMessage(Message message, string pushContent, string pushData, string eventId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.Message.html">Message</a></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>将要发送的消息体。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pushContent</span></td>
+        <td><p>当下发 push 消息时，在通知栏里会显示这个字段。
+如果发送的是自定义消息，该字段必须填写，否则无法收到 push 消息。
+如果发送 sdk 中默认的消息类型，例如 RC:TxtMsg, RC:VcMsg, RC:ImgMsg，则不需要填写，默认已经指定。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pushData</span></td>
+        <td><p>push 附加信息。如果设置该字段，用户在收到 push 消息时</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">eventId</span></td>
+        <td><p>发送消息的回调事件 Id</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_sendMessage_" data-uid="cn.rongcloud.sdk.RongCloud.sendMessage*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_sendMessage_cn_rongcloud_sdk_ConversationType_System_String_cn_rongcloud_sdk_MessageContent_System_String_System_String_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.sendMessage(cn.rongcloud.sdk.ConversationType,System.String,cn.rongcloud.sdk.MessageContent,System.String,System.String,System.String)">sendMessage(ConversationType, String, MessageContent, String, String, String)</h4>
+  <div class="markdown level1 summary"><p>根据会话类型，发送消息。
+在 RCEvent.sendMessageEvent 事件中获取发送成功、失败消息</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void sendMessage(ConversationType type, string targetId, MessageContent content, string eventId, string pushContent = &quot;&quot;, string pushData = &quot;&quot;)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">type</span></td>
+        <td><p>会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>目标 Id。根据不同的 conversationType，可能是用户 Id、讨论组 Id、群组 Id 或聊天室 Id。</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.MessageContent.html">MessageContent</a></td>
+        <td><span class="parametername">content</span></td>
+        <td><p>消息内容，例如 TextMessage, ImageMessage。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">eventId</span></td>
+        <td><p>发送消息的回调事件 Id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pushContent</span></td>
+        <td><p>当下发 push 消息时，在通知栏里会显示这个字段。 如果发送的是自定义消息，该字段必须填写，否则无法收到 push 消息。 如果发送 sdk 中默认的消息类型，例如 RC:TxtMsg, RC:VcMsg, RC:ImgMsg，则不需要填写，默认已经指定。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pushData</span></td>
+        <td><p>push 附加信息。如果设置该字段，用户在收到 push 消息时，能通过 PushNotificationMessage.getPushData() 方法获取。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_sendMessage_" data-uid="cn.rongcloud.sdk.RongCloud.sendMessage*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_sendMessage_cn_rongcloud_sdk_Message_System_String_System_String_System_Boolean_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.sendMessage(cn.rongcloud.sdk.Message,System.String,System.String,System.Boolean,System.String)">sendMessage(Message, String, String, Boolean, String)</h4>
+  <div class="markdown level1 summary"><p>发送消息。
+在 RCEvent.sendMessageEvent 事件中获取发送成功、失败消息</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void sendMessage(Message message, string pushContent, string pushData, bool isVoIPPush, string eventId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.Message.html">Message</a></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>将要发送的消息体。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pushContent</span></td>
+        <td><p>当下发 push 消息时，在通知栏里会显示这个字段。
+如果发送的是自定义消息，该字段必须填写，否则无法收到 push 消息。
+如果发送 sdk 中默认的消息类型，例如 RC:TxtMsg, RC:VcMsg, RC:ImgMsg，则不需要填写，默认已经指定。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pushData</span></td>
+        <td><p>push 附加信息。如果设置该字段，用户在收到 push 消息时</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">isVoIPPush</span></td>
+        <td><p>发送消息附加选项，目前仅支持设置 isVoIPPush，如果对端设备是 iOS，设置 isVoIPPush 为 True，会走 VoIP 通道推送 Push，如对端为 Android 设备则正常发送此消息。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">eventId</span></td>
+        <td><p>发送消息的回调事件 Id</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_sendMessage_" data-uid="cn.rongcloud.sdk.RongCloud.sendMessage*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_sendMessage_cn_rongcloud_sdk_Message_System_String_System_String_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.sendMessage(cn.rongcloud.sdk.Message,System.String,System.String,System.String)">sendMessage(Message, String, String, String)</h4>
+  <div class="markdown level1 summary"><p>发送消息。
+在 RCEvent.sendMessageEvent 事件中获取发送成功、失败消息</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void sendMessage(Message message, string pushContent, string pushData, string eventId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.Message.html">Message</a></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>将要发送的消息体。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pushContent</span></td>
+        <td><p>当下发 push 消息时，在通知栏里会显示这个字段。
+如果发送的是自定义消息，该字段必须填写，否则无法收到 push 消息。
+如果发送 sdk 中默认的消息类型，例如 RC:TxtMsg, RC:VcMsg, RC:ImgMsg，则不需要填写，默认已经指定。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">pushData</span></td>
+        <td><p>push 附加信息。如果设置该字段，用户在收到 push 消息时</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">eventId</span></td>
+        <td><p>发送消息的回调事件 Id</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_sendMessage_" data-uid="cn.rongcloud.sdk.RongCloud.sendMessage*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_sendMessage_System_String_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.sendMessage(System.String,System.String)">sendMessage(String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void sendMessage(string message, string eventId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">eventId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_sendReadReceiptMessage_" data-uid="cn.rongcloud.sdk.RongCloud.sendReadReceiptMessage*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_sendReadReceiptMessage_cn_rongcloud_sdk_ConversationType_System_String_System_Double_" data-uid="cn.rongcloud.sdk.RongCloud.sendReadReceiptMessage(cn.rongcloud.sdk.ConversationType,System.String,System.Double)">sendReadReceiptMessage(ConversationType, String, Double)</h4>
+  <div class="markdown level1 summary"><p>发送某个会话中消息阅读的回执
+目前只支持单聊, 如果使用Lib可以注册监听 setReadReceiptListener</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void sendReadReceiptMessage(ConversationType conversationType, string targetId, double timestamp)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>会话类型</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>目标会话ID</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">timestamp</span></td>
+        <td><p>该会话中已阅读点最后一条消息的发送时间戳</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_sendReadReceiptRequest_" data-uid="cn.rongcloud.sdk.RongCloud.sendReadReceiptRequest*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_sendReadReceiptRequest_System_Int32_" data-uid="cn.rongcloud.sdk.RongCloud.sendReadReceiptRequest(System.Int32)">sendReadReceiptRequest(Int32)</h4>
+  <div class="markdown level1 summary"><p>发起群组消息回执请求。
+只能对自己发送的消息发起消息回执请求。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void sendReadReceiptRequest(int messageId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">messageId</span></td>
+        <td><p>需要请求回执的那条消息的 Id</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_sendReadReceiptResponse_" data-uid="cn.rongcloud.sdk.RongCloud.sendReadReceiptResponse*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_sendReadReceiptResponse_cn_rongcloud_sdk_ConversationType_System_String_System_Collections_Generic_List_cn_rongcloud_sdk_Message__" data-uid="cn.rongcloud.sdk.RongCloud.sendReadReceiptResponse(cn.rongcloud.sdk.ConversationType,System.String,System.Collections.Generic.List{cn.rongcloud.sdk.Message})">sendReadReceiptResponse(ConversationType, String, List&lt;Message&gt;)</h4>
+  <div class="markdown level1 summary"><p>发送群消息已读回执</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void sendReadReceiptResponse(ConversationType conversationType, string targetId, List&lt;Message&gt; messageList)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>会话类型，ConversationType对象</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>会话 id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="cn.rongcloud.sdk.Message.html">Message</a>&gt;</td>
+        <td><span class="parametername">messageList</span></td>
+        <td><p>会话中需要发送回执的消息列表</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_sendTypingStatus_" data-uid="cn.rongcloud.sdk.RongCloud.sendTypingStatus*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_sendTypingStatus_cn_rongcloud_sdk_ConversationType_System_String_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.sendTypingStatus(cn.rongcloud.sdk.ConversationType,System.String,System.String)">sendTypingStatus(ConversationType, String, String)</h4>
+  <div class="markdown level1 summary"><p>向会话中发送正在输入的状态</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void sendTypingStatus(ConversationType conversationType, string targetId, string typingStatus)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>会话类型</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>会话 id</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">typingStatus</span></td>
+        <td><p>正在输入的消息的类型名
+typingContentType为用户当前正在编辑的消息类型名，即message中getObjectName的返回值。
+如文本消息，应该传类型名&quot;RC:TxtMsg&quot;。
+目前只支持单聊</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_setConversationNotificationStatus_" data-uid="cn.rongcloud.sdk.RongCloud.setConversationNotificationStatus*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_setConversationNotificationStatus_cn_rongcloud_sdk_ConversationType_System_String_System_Boolean_" data-uid="cn.rongcloud.sdk.RongCloud.setConversationNotificationStatus(cn.rongcloud.sdk.ConversationType,System.String,System.Boolean)">setConversationNotificationStatus(ConversationType, String, Boolean)</h4>
+  <div class="markdown level1 summary"><p>设置会话消息提醒状态。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void setConversationNotificationStatus(ConversationType conversationType, string targetId, bool isBlock)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>目标 Id。根据不同的 conversationType，可能是用户 Id、群组 Id。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">isBlock</span></td>
+        <td><p>是否屏蔽。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_setConversationToTop_" data-uid="cn.rongcloud.sdk.RongCloud.setConversationToTop*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_setConversationToTop_cn_rongcloud_sdk_ConversationType_System_String_System_Boolean_" data-uid="cn.rongcloud.sdk.RongCloud.setConversationToTop(cn.rongcloud.sdk.ConversationType,System.String,System.Boolean)">setConversationToTop(ConversationType, String, Boolean)</h4>
+  <div class="markdown level1 summary"><p>设置某一会话为置顶或者取消置顶，回调方式获取设置是否成功。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void setConversationToTop(ConversationType conversationType, string targetId, bool isTop)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>目标 Id。根据不同的 conversationType，可能是用户 Id、群组 Id 或聊天室 Id。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">isTop</span></td>
+        <td><p>是否置顶。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_setMessageReceivedStatus_" data-uid="cn.rongcloud.sdk.RongCloud.setMessageReceivedStatus*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_setMessageReceivedStatus_System_Int32_cn_rongcloud_sdk_ReceivedStatus_" data-uid="cn.rongcloud.sdk.RongCloud.setMessageReceivedStatus(System.Int32,cn.rongcloud.sdk.ReceivedStatus)">setMessageReceivedStatus(Int32, ReceivedStatus)</h4>
+  <div class="markdown level1 summary"><p>根据 messageId 设置接收到的消息状态。用于UI标记消息为已读，已下载等状态。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void setMessageReceivedStatus(int messageId, ReceivedStatus receivedStatus)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">messageId</span></td>
+        <td><p>消息 Id。</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ReceivedStatus.html">ReceivedStatus</a></td>
+        <td><span class="parametername">receivedStatus</span></td>
+        <td><p>接收到的消息状态。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_setNotificationQuietHours_" data-uid="cn.rongcloud.sdk.RongCloud.setNotificationQuietHours*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_setNotificationQuietHours_System_String_System_Int32_" data-uid="cn.rongcloud.sdk.RongCloud.setNotificationQuietHours(System.String,System.Int32)">setNotificationQuietHours(String, Int32)</h4>
+  <div class="markdown level1 summary"><p>设置消息通知免打扰时间。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void setNotificationQuietHours(string startTime, int spanMinutes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">startTime</span></td>
+        <td><p>起始时间 格式 HH:MM:SS。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">spanMinutes</span></td>
+        <td><p>设置的免打扰结束时间距离起始时间的间隔分钟数。 0 &lt; spanMinutes &lt; 1440。
+比如，您设置的起始时间是 00：00， 结束时间为 23：59，则 spanMinutes 为 23 * 60 + 59 = 1339 分钟。 </p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_setOfflineMessageDuration_" data-uid="cn.rongcloud.sdk.RongCloud.setOfflineMessageDuration*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_setOfflineMessageDuration_System_Int32_" data-uid="cn.rongcloud.sdk.RongCloud.setOfflineMessageDuration(System.Int32)">setOfflineMessageDuration(Int32)</h4>
+  <div class="markdown level1 summary"><p>设置当前用户离线消息存储时间</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void setOfflineMessageDuration(int duration)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">duration</span></td>
+        <td><p>离线消息时间，参数取值范围为 int 值 1~7。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_startCustomerService_" data-uid="cn.rongcloud.sdk.RongCloud.startCustomerService*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_startCustomerService_System_String_cn_rongcloud_sdk_CSCustomServiceInfo_" data-uid="cn.rongcloud.sdk.RongCloud.startCustomerService(System.String,cn.rongcloud.sdk.CSCustomServiceInfo)">startCustomerService(String, CSCustomServiceInfo)</h4>
+  <div class="markdown level1 summary"><p>启动客服服务</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void startCustomerService(string kefuId, CSCustomServiceInfo customServiceInfo)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">kefuId</span></td>
+        <td><p>客服 id,用户去融云开发者后台申请开通后获得客服Id</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.CSCustomServiceInfo.html">CSCustomServiceInfo</a></td>
+        <td><span class="parametername">customServiceInfo</span></td>
+        <td><p>客服用户信息,包括用户基本信息，用户联系信息以及请求信息
+其中 nickName 不能为空, 如果为空,则上传当前用户userId</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_startRealTimeLocation_" data-uid="cn.rongcloud.sdk.RongCloud.startRealTimeLocation*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_startRealTimeLocation_cn_rongcloud_sdk_ConversationType_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.startRealTimeLocation(cn.rongcloud.sdk.ConversationType,System.String)">startRealTimeLocation(ConversationType, String)</h4>
+  <div class="markdown level1 summary"><p>发起位置共享。</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void startRealTimeLocation(ConversationType conversationType, string targetId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>发起位置共享的会话类型。</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>发起位置共享的 targetId。</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_stopCustomService_" data-uid="cn.rongcloud.sdk.RongCloud.stopCustomService*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_stopCustomService_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.stopCustomService(System.String)">stopCustomService(String)</h4>
+  <div class="markdown level1 summary"><p>结束客服. 调用此方法后,将向客服发起结束请求</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void stopCustomService(string kefuId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">kefuId</span></td>
+        <td><p>客服 id,用户去融云开发者后台申请开通后获得客服Id</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_switchToHumanMode_" data-uid="cn.rongcloud.sdk.RongCloud.switchToHumanMode*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_switchToHumanMode_System_String_" data-uid="cn.rongcloud.sdk.RongCloud.switchToHumanMode(System.String)">switchToHumanMode(String)</h4>
+  <div class="markdown level1 summary"><p>切换到人工客服模式,切换的结果需要在 {@link ICustomServiceListener#onModeChanged(CustomServiceMode)} 方法回调中处理</p>
+如果客服没有分组, 则直接切人工模式;如果客服有分组,那么需要在回调{@link ICustomServiceListener#onSelectGroup(List)}
+中去弹出分组选择窗口并选择分组,之后在这个回调中调用 @see{@link RongIMClient#selectCustomServiceGroup(String, String)}
+根据客服 Id 和 分组 Id 去切换到人工模式
+<p>客服模式 分为无服务,机器人模式,人工模式,机器人优先模式,人工优先模式</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void switchToHumanMode(string kefuId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">kefuId</span></td>
+        <td><p>客服 id,用户去融云开发者后台申请开通后获得客服Id</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="cn_rongcloud_sdk_RongCloud_syncConversationReadStatus_" data-uid="cn.rongcloud.sdk.RongCloud.syncConversationReadStatus*"></a>
+  <h4 id="cn_rongcloud_sdk_RongCloud_syncConversationReadStatus_cn_rongcloud_sdk_ConversationType_System_String_System_Double_" data-uid="cn.rongcloud.sdk.RongCloud.syncConversationReadStatus(cn.rongcloud.sdk.ConversationType,System.String,System.Double)">syncConversationReadStatus(ConversationType, String, Double)</h4>
+  <div class="markdown level1 summary"><p>多端登录时，通知其它终端清除某个会话的未读消息数</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void syncConversationReadStatus(ConversationType conversationType, string targetId, double timestamp)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="cn.rongcloud.sdk.ConversationType.html">ConversationType</a></td>
+        <td><span class="parametername">conversationType</span></td>
+        <td><p>会话类型，Conversation.ConversationType对象</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">targetId</span></td>
+        <td><p>目标会话 ID</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">timestamp</span></td>
+        <td><p>该会话中已读的最后一条消息的发送时间戳</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

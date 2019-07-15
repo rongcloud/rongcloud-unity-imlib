@@ -7,12 +7,14 @@ import android.provider.MediaStore;
 import android.util.Log;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.unity3d.player.UnityPlayer;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import io.rong.imlib.RongIMClient;
 import io.rong.imlib.RongIMClient.ErrorCode;
 import io.rong.imlib.RongIMClient.OperationCallback;
 import io.rong.imlib.RongIMClient.ResultCallback;
@@ -24,6 +26,9 @@ import io.rong.imlib.model.PublicServiceProfileList;
 
 import java.io.*;
 import java.util.List;
+
+import static cn.rongcloud.imlib.unity.Convert.toJSON;
+import static cn.rongcloud.imlib.unity.Convert.toJson;
 
 public class Utils {
 
@@ -46,7 +51,7 @@ public class Utils {
 
             @Override
             public void onError(ErrorCode errorCode) {
-
+                sendCommCallbackMessage(callback,createCommErrorMsg(errorCode));
             }
         };
     }
@@ -107,5 +112,89 @@ public class Utils {
         msg.addProperty(key,value);
 
         return msg;
+    }
+    static JsonArray toJsonArray(String str){
+        Gson gson=new Gson();
+
+        return gson.fromJson(str,JsonArray.class);
+
+    }
+    static ResultCallback<Boolean> createBooleanCallback(final String callback) {
+        return new ResultCallback<Boolean>() {
+            @Override
+            public void onSuccess(Boolean result) {
+                JsonObject msg=createJsonObject("status","success");
+                msg.addProperty("result",result);
+                sendCommCallbackMessage(callback,msg);
+            }
+
+            @Override
+            public void onError(ErrorCode errorCode) {
+                sendCommCallbackMessage(callback,createCommErrorMsg(errorCode));
+            }
+        };
+    }
+    static JsonObject toJsonObject(String json){
+        Gson gson=new Gson();
+        return gson.fromJson(json,JsonObject.class);
+    }
+    static JsonObject createCommErrorMsg(ErrorCode errorCode){
+        JsonObject msg=createJsonObject("status","error");
+        msg.addProperty("errorCode",errorCode.getValue());
+        return msg;
+    }
+    static RongIMClient.ResultCallback<List<Message>> createMessagesCallback(final String callback) {
+        return new RongIMClient.ResultCallback<List<Message>>() {
+            @Override
+            public void onSuccess(List<Message> messages) {
+                JsonObject msg=createJsonObject("status","success");
+                msg.add("messages",toJSON(messages));
+                sendCommCallbackMessage(callback,msg);
+            }
+
+            @Override
+            public void onError(RongIMClient.ErrorCode errorCode) {
+                sendCommCallbackMessage(callback,createCommErrorMsg(errorCode));
+            }
+
+
+        };
+    }
+    static ResultCallback<List<Conversation>> createConversationListCallback(final String callback) {
+        return new ResultCallback<List<Conversation>>() {
+            @Override
+            public void onSuccess(List<Conversation> conversations) {
+                JsonObject msg=createJsonObject("status","success");
+
+                JsonArray array = new JsonArray();
+                if (conversations != null) {
+                    for (Conversation conversation : conversations) {
+                        array.add(toJson(conversation));
+                    }
+                }
+                msg.add("conversations",array);
+                sendCommCallbackMessage(callback,msg);
+            }
+
+            @Override
+            public void onError(ErrorCode errorCode) {
+                sendCommCallbackMessage(callback,createCommErrorMsg(errorCode));
+            }
+        };
+    }
+    static ResultCallback<ConversationNotificationStatus> createConversationNotificationStatusCallback(final String callback) {
+        return new ResultCallback<ConversationNotificationStatus>() {
+            @Override
+            public void onSuccess(ConversationNotificationStatus status) {
+                JsonObject msg=createJsonObject("status","success");
+                msg.addProperty("NotificationStatus",status.getValue());
+                sendCommCallbackMessage(callback,msg);
+            }
+
+            @Override
+            public void onError(ErrorCode errorCode) {
+                sendCommCallbackMessage(callback,createCommErrorMsg(errorCode));
+            }
+        };
     }
 }

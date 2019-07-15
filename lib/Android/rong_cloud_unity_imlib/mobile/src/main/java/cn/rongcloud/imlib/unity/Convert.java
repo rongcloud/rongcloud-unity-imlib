@@ -12,6 +12,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import io.rong.imlib.CustomServiceConfig;
+import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.*;
 import io.rong.imlib.model.Conversation.ConversationType;
 import io.rong.imlib.model.MentionedInfo.MentionedType;
@@ -104,6 +105,16 @@ class Convert {
         }
 
         return messageContent;
+    }
+    static String[] toStringArray(JsonArray items){
+        if (items == null) {
+            return null;
+        }
+        String[] array = new String[items.size()];
+        for (int i = 0; i < items.size(); i += 1) {
+            array[i] = items.get(i).getAsString();
+        }
+        return array;
     }
     static ArrayList<String> toStringList(JsonArray array)  {
         if (array == null) {
@@ -239,6 +250,49 @@ class Convert {
         msg.add("content", toJson(objectName, message.getContent()));
         return msg;
     }
+    private static JsonObject toJson(CSLMessageItem item) {
+        JsonObject map = new JsonObject();
+        map.addProperty("name", item.getName());
+        map.addProperty("title", item.getTitle());
+        map.addProperty("defaultText", item.getDefaultText());
+        map.addProperty("type", item.getType());
+        map.addProperty("verification", item.getVerification());
+        map.addProperty("required", item.isRequired());
+        map.addProperty("max", item.getMax());
+        return map;
+    }
+    static JsonObject toJson(CustomServiceConfig config){
+        JsonObject map=new JsonObject();
+        map.addProperty("isBlack", config.isBlack);
+        map.addProperty("companyName", config.companyName);
+        map.addProperty("companyIcon", config.companyIcon);
+        map.addProperty("announceClickUrl", config.announceClickUrl);
+        map.addProperty("announceMsg", config.announceMsg);
+        JsonArray leaveMessageNativeInfo =new JsonArray();
+        for (CSLMessageItem item : config.leaveMessageNativeInfo) {
+            leaveMessageNativeInfo.add(toJson(item));
+        }
+        map.add("leaveMessageNativeInfo", leaveMessageNativeInfo);
+        map.addProperty("leaveMessageType", config.leaveMessageConfigType.getValue());
+        map.addProperty("userTipTime", config.userTipTime);
+        map.addProperty("userTipWord", config.userTipWord);
+        map.addProperty("adminTipTime", config.adminTipTime);
+        map.addProperty("adminTipWord", config.adminTipWord);
+        map.addProperty("evaEntryPoint", config.evaEntryPoint.getValue());
+        map.addProperty("evaType", config.evaluateType.getValue());
+        map.addProperty("robotSessionNoEva", config.robotSessionNoEva);
+        JsonArray humanEvaluateItems =new JsonArray();
+        for (CSHumanEvaluateItem item : config.humanEvaluateList) {
+            JsonObject evaItem = new JsonObject();
+            evaItem.addProperty("value", item.getValue());
+            evaItem.addProperty("description", item.getDescription());
+            humanEvaluateItems.add(evaItem);
+        }
+        map.add("humanEvaluateItems", humanEvaluateItems);
+        map.addProperty("isReportResolveStatus", config.isReportResolveStatus);
+        map.addProperty("isDisableLocation", config.isDisableLocation);
+        return map;
+    }
 
     static JsonObject toJson(Conversation conversation)  {
         if (conversation == null) {
@@ -272,5 +326,92 @@ class Convert {
             }
         }
         return array;
+    }
+
+    static ConversationType[] toConversationTypeArray(JsonArray array) {
+        ConversationType[] conversationTypesArray = new ConversationType[array.size()];
+        for (int i = 0; i < array.size(); i += 1) {
+            conversationTypesArray[i] = ConversationType.setValue(array.get(i).getAsInt());
+        }
+        return conversationTypesArray;
+    }
+    static CSCustomServiceInfo toCSCustomServiceInfo(JsonObject jsonObject) {
+        CSCustomServiceInfo.Builder builder = new CSCustomServiceInfo.Builder();
+        if (jsonObject.has("userId")) {
+            builder.userId(jsonObject.get("userId").getAsString());
+        }
+        if (jsonObject.has("nickName")) {
+            builder.nickName(jsonObject.get("nickName").getAsString());
+        }
+        if (jsonObject.has("loginName")) {
+            builder.loginName(jsonObject.get("loginName").getAsString());
+        }
+        if (jsonObject.has("name")) {
+            builder.name(jsonObject.get("name").getAsString());
+        }
+        if (jsonObject.has("grade")) {
+            builder.grade(jsonObject.get("grade").getAsString());
+        }
+        if (jsonObject.has("age")) {
+            builder.age(jsonObject.get("age").getAsString());
+        }
+        if (jsonObject.has("profession")) {
+            builder.profession(jsonObject.get("profession").getAsString());
+        }
+        if (jsonObject.has("portraitUrl")) {
+            builder.portraitUrl(jsonObject.get("portraitUrl").getAsString());
+        }
+        if (jsonObject.has("province")) {
+            builder.province(jsonObject.get("province").getAsString());
+        }
+        if (jsonObject.has("city")) {
+            builder.city(jsonObject.get("city").getAsString());
+        }
+        if (jsonObject.has("memo")) {
+            builder.memo(jsonObject.get("memo").getAsString());
+        }
+        if (jsonObject.has("mobileNo")) {
+            builder.mobileNo(jsonObject.get("mobileNo").getAsString());
+        }
+        if (jsonObject.has("email")) {
+            builder.email(jsonObject.get("email").getAsString());
+        }
+        if (jsonObject.has("address")) {
+            builder.address(jsonObject.get("address").getAsString());
+        }
+        if (jsonObject.has("QQ")) {
+            builder.QQ(jsonObject.get("QQ").getAsString());
+        }
+        if (jsonObject.has("weibo")) {
+            builder.weibo(jsonObject.get("weibo").getAsString());
+        }
+        if (jsonObject.has("weixin")) {
+            builder.weixin(jsonObject.get("weixin").getAsString());
+        }
+        if (jsonObject.has("page")) {
+            builder.page(jsonObject.get("page").getAsString());
+        }
+        if (jsonObject.has("referrer")) {
+            builder.referrer(jsonObject.get("referrer").getAsString());
+        }
+        if (jsonObject.has("enterUrl")) {
+            builder.enterUrl(jsonObject.get("enterUrl").getAsString());
+        }
+        if (jsonObject.has("skillId")) {
+            builder.skillId(jsonObject.get("skillId").getAsString());
+        }
+        if (jsonObject.has("listUrl")) {
+            JsonArray array = jsonObject.getAsJsonArray("listUrl");
+            assert array != null;
+            ArrayList<String> listUrl = toStringList(array);
+            builder.listUrl(listUrl);
+        }
+        if (jsonObject.has("define")) {
+            builder.define(jsonObject.get("profession").getAsString());
+        }
+        if (jsonObject.has("productId")) {
+            builder.productId(jsonObject.get("profession").getAsString());
+        }
+        return builder.build();
     }
 }

@@ -4,7 +4,7 @@
 #import <RongIMLib/RongIMLib.h>
 #import "UnityInterface.h"
 @interface RongCloudUnityUtils:NSObject
-+(void)SendMessage:(NSString *) callback sendMessage:(NSDictionary *) msg;
++(void)SendMessage:(NSString *) callback sendMessage:(id) msg;
 +(char*) MakeStringCopy:(NSString*) nstring;
 +(NSDictionary *)createDict:(NSString *)key
                    forValue:(NSObject *)value;
@@ -20,5 +20,10 @@
 +(void)sendCommSuccessCallBack:(NSString *)callback;
 +(void)sendCommErrorCallBack:(NSString *)callback errCode:(NSObject *)code;
 +(void) onSendMessageError:(NSString*) eventId messageId:(long) messageId errcode:(int) errcode;
++(NSArray*)getArraryFromString:(NSString*) str;
++(NSString *) MakeStringFromChar:(char *)charStr;
++(void)sendCommErrorCallBack:(NSString *)callback errCode:(NSObject *)code eventId:(char*)eventId;
++(void)SendBoolMessage:(NSString *)callback result:(BOOL)result;
++(NSArray*)getDictionaryByArray:(NSArray *) array;
 @end
 #endif

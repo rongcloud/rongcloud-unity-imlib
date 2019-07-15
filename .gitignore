@@ -1,0 +1,4 @@
+*.vs
+*.sqlite
+Docs/.vs/slnx.sqlite
+.vs
