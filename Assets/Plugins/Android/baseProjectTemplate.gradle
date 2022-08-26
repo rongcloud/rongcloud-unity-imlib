@@ -1,0 +1,28 @@
+allprojects {
+    buildscript {
+        repositories {
+            google()
+            jcenter()
+            maven { url 'http://developer.huawei.com/repo/' }
+        }
+
+        dependencies {
+            classpath 'com.android.tools.build:gradle:3.4.0'
+            classpath 'com.huawei.agconnect:agcp:1.4.1.300'
+        }
+    }
+
+    repositories {
+        google()
+        jcenter()
+        maven { url "http://maven.rongcloud.cn/repository/maven-releases/"}
+        maven { url 'http://developer.huawei.com/repo/'}
+        flatDir {
+            dirs "${project(':unityLibrary').projectDir}/libs"
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
