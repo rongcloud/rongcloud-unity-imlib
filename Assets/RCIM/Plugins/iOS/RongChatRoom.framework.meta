@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9c27e6049f78b4812b1c3ef3227b46a0
+guid: 1a279b0e754ad42a09c2b817216167be
 folderAsset: yes
 PluginImporter:
   externalObjects: {}
@@ -60,13 +60,13 @@ PluginImporter:
     second:
       enabled: 0
       settings:
-        CPU: x86
+        CPU: None
   - first:
       Standalone: Win64
     second:
       enabled: 0
       settings:
-        CPU: x86_64
+        CPU: None
   - first:
       iPhone: iOS
     second:

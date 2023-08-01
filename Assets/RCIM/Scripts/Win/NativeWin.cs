@@ -2,6 +2,7 @@
 #if UNITY_STANDALONE_WIN
 using System;
 using System.Runtime.InteropServices;
+using static cn_rongcloud_im_unity.RCIMWinEngine;
 
 namespace cn_rongcloud_im_unity
 {

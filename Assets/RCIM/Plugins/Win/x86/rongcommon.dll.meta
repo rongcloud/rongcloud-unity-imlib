@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 17cb8e7aa2a23de42a80bbe897ac238c
+guid: ec658039bc26b411cbaa817a89f0d6a1
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -21,8 +21,7 @@ PluginImporter:
         Exclude Linux64: 0
         Exclude OSXUniversal: 0
         Exclude Win: 0
-        Exclude Win64: 1
-        Exclude WindowsStoreApps: 0
+        Exclude Win64: 0
         Exclude iOS: 1
   - first:
       Android: Android
@@ -40,7 +39,7 @@ PluginImporter:
     second:
       enabled: 0
       settings:
-        CPU: x86
+        CPU: AnyCPU
         DefaultValueInitialized: true
         OS: AnyOS
   - first:
@@ -64,19 +63,9 @@ PluginImporter:
   - first:
       Standalone: Win64
     second:
-      enabled: 0
-      settings:
-        CPU: None
-  - first:
-      Windows Store Apps: WindowsStoreApps
-    second:
       enabled: 1
       settings:
-        CPU: X86
-        DontProcess: false
-        PlaceholderPath: 
-        SDK: AnySDK
-        ScriptingBackend: DotNet
+        CPU: None
   - first:
       iPhone: iOS
     second:

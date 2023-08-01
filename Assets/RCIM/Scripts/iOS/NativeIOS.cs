@@ -1,435 +1,667 @@
-//
-//  Copyright © 2021 RongCloud. All rights reserved.
-//
-
 #if UNITY_IOS
 using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using UnityEngine;
+using AOT;
 
 namespace cn_rongcloud_im_unity
 {
     public class NativeIOS
     {
-        const string MyLibName = "__Internal";
-
-        #region iOS API
-
-        #region 初始化和连接
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_init_client_listener(
-            OnImConnectionStatusChangedHandler onImConnectionStatusChanged,
-            OnImMessageReceivedHandler onReceivedImMessage,
-            OnImBlockedMessageInfoHandler onBlockedMessageInfo,
-            OnImRecallMessageHandler onRecallMessageDidReceived,
-            OnImMessageExpansionDidUpdateHandler onMessageExpansionDidUpdate,
-            OnImMessageExpansionDidRemoveHandler onMessageExpansionDidRemove,
-            OnImTypingStatusChangedHandler onImTypingStatusChanged,
-            OnImChatRoomKvDidSyncedHandler onChatRoomKvDidSynced,
-            OnImChatRoomKvAddRemovedHandler onChatRoomKvDidUpdated,
-            OnImChatRoomKvAddRemovedHandler onChatRoomKvDidRemoved,
-            OnImChatRoomMemberActionChangedHandler onChatRoomMemberActionChanged,
-
-            OnImChatRoomStatusChanged_Joining_Handler onChatRoomStatusChanged_Joining,
-            OnImChatRoomStatusChanged_Joined_Handler onChatRoomStatusChanged_Joined,
-            OnImChatRoomStatusChanged_Reset_Handler onChatRoomStatusChanged_Reset,
-            OnImChatRoomStatusChanged_Quited_Handler onChatRoomStatusChanged_Quited,
-            OnImChatRoomStatusChanged_Destroyed_Handler onChatRoomStatusChanged_Destroyed,
-            OnImChatRoomStatusChanged_Error_Handler onChatRoomStatusChanged_Error,
-
-            OnImCallbackVoid onImTagChanged,
-            OnImCallbackVoid onImConversationTagChanged,
-            OnImReadReceiptRequestHandler onImReadReceiptRequest,
-            OnImReadReceiptResponseHandler onImReadReceiptResponse,
-            OnImReadReceiptReceivedHandler onImReadReceiptReceived,
-            OnImMediaMessageSendProgressHandler onImMediaMessageSendProgress,
-            OnImMediaMessageSendCancelHandler onImMediaMessageSendCancel);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_init(string app_key);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_logout();
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_connect(string token, ref on_general_string_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern int im_get_connection_status();
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_disconnect();
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_set_server_info(string naviServer, string fileServer);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_set_current_user_info(ref im_user_info imUserInfo);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_set_reconnect_kick_enable(bool kick);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern void im_create_engine(string appkey, IntPtr options);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern void im_engine_destory();
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern void im_set_device_token(string token);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_connect(string token, int timeout, ref ios_connect_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_disconnect(bool receivePush);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern IntPtr im_create_text_message(RCIMConversationType type, string targetId, string channelId,
+                                                             string text);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern void im_free_text_message(IntPtr ptr);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern IntPtr im_create_image_message(RCIMConversationType type, string targetId, string channelId,
+                                                              string path);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern void im_free_image_message(IntPtr ptr);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern IntPtr im_create_file_message(RCIMConversationType type, string targetId, string channelId,
+                                                             string path);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern void im_free_file_message(IntPtr ptr);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern IntPtr im_create_sight_message(RCIMConversationType type, string targetId, string channelId,
+                                                              string path, int duration);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern void im_free_sight_message(IntPtr ptr);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern IntPtr im_create_voice_message(RCIMConversationType type, string targetId, string channelId,
+                                                              string path, int duration);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern void im_free_voice_message(IntPtr ptr);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern IntPtr im_create_reference_message(RCIMConversationType type, string targetId,
+                                                                  string channelId, ref ios_class_warpper referenceMessage,
+                                                                  string text);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern void im_free_reference_message(IntPtr ptr);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern IntPtr im_create_gif_message(RCIMConversationType type, string targetId, string channelId,
+                                                            string path);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern void im_free_gif_message(IntPtr ptr);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern IntPtr im_create_custom_message(RCIMConversationType type, string targetId, string channelId,
+                                                               RCIMCustomMessagePolicy policy, string messageIdentifier,
+                                                               ref ios_c_map_item[] fields, int fields_count);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern void im_free_custom_message(IntPtr ptr);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern IntPtr im_create_location_message(RCIMConversationType type, string targetId,
+                                                                 string channelId, double longitude, double latitude,
+                                                                 string poiName, string thumbnailPath);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern void im_free_location_message(IntPtr ptr);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_send_message(ref ios_class_warpper message, ref ios_send_message_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_send_media_message(ref ios_class_warpper message,
+                                                         ref ios_send_media_message_proxy listener);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_cancel_sending_media_message(ref ios_class_warpper message,
+                                                                   ref ios_cancel_sending_media_message_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_download_media_message(ref ios_class_warpper message,
+                                                             ref ios_download_media_message_proxy listener);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_cancel_downloading_media_message(
+            ref ios_class_warpper message, ref ios_cancel_downloading_media_message_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_conversation(RCIMConversationType type, string targetId, string channelId);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_conversation(RCIMConversationType type, string targetId, string channelId,
+                                                       ref ios_get_conversation_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_conversations(RCIMConversationType[] conversationTypes,
+                                                         int conversationTypes_count, string channelId, long startTime,
+                                                         int count);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_conversations(RCIMConversationType[] conversationTypes,
+                                                        int conversationTypes_count, string channelId, long startTime,
+                                                        int count, ref ios_get_conversations_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_remove_conversation(RCIMConversationType type, string targetId, string channelId,
+                                                          ref ios_remove_conversation_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_remove_conversations(RCIMConversationType[] conversationTypes,
+                                                           int conversationTypes_count, string channelId,
+                                                           ref ios_remove_conversations_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_unread_count(RCIMConversationType type, string targetId, string channelId);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_unread_count(RCIMConversationType type, string targetId, string channelId,
+                                                       ref ios_get_unread_count_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_total_unread_count(string channelId);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_total_unread_count(string channelId,
+                                                             ref ios_get_total_unread_count_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_unread_mentioned_count(RCIMConversationType type, string targetId,
+                                                                  string channelId);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_unread_mentioned_count(RCIMConversationType type, string targetId,
+                                                                 string channelId,
+                                                                 ref ios_get_unread_mentioned_count_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_ultra_group_all_unread_count();
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_ultra_group_all_unread_count(
+            ref ios_get_ultra_group_all_unread_count_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_ultra_group_all_unread_mentioned_count();
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_ultra_group_all_unread_mentioned_count(
+            ref ios_get_ultra_group_all_unread_mentioned_count_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_ultra_group_unread_count(string targetId);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_ultra_group_unread_count(string targetId,
+                                                                   ref ios_get_ultra_group_unread_count_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_ultra_group_unread_mentioned_count(string targetId);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_ultra_group_unread_mentioned_count(
+            string targetId, ref ios_get_ultra_group_unread_mentioned_count_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_unread_count_by_conversation_types(RCIMConversationType[] conversationTypes,
+                                                                              int conversationTypes_count, string channelId,
+                                                                              bool contain);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_unread_count_by_conversation_types(
+            RCIMConversationType[] conversationTypes, int conversationTypes_count, string channelId, bool contain,
+            ref ios_get_unread_count_by_conversation_types_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_clear_unread_count(RCIMConversationType type, string targetId, string channelId,
+                                                         long timestamp, ref ios_clear_unread_count_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_save_draft_message(RCIMConversationType type, string targetId, string channelId,
+                                                         string draft, ref ios_save_draft_message_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_draft_message(RCIMConversationType type, string targetId, string channelId);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_draft_message(RCIMConversationType type, string targetId, string channelId,
+                                                        ref ios_get_draft_message_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_clear_draft_message(RCIMConversationType type, string targetId, string channelId,
+                                                          ref ios_clear_draft_message_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_blocked_conversations(RCIMConversationType[] conversationTypes,
+                                                                 int conversationTypes_count, string channelId);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_blocked_conversations(RCIMConversationType[] conversationTypes,
+                                                                int conversationTypes_count, string channelId,
+                                                                ref ios_get_blocked_conversations_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_change_conversation_top_status(RCIMConversationType type, string targetId,
+                                                                     string channelId, bool top,
+                                                                     ref ios_change_conversation_top_status_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_conversation_top_status(RCIMConversationType type, string targetId,
+                                                                   string channelId);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_conversation_top_status(RCIMConversationType type, string targetId,
+                                                                  string channelId,
+                                                                  ref ios_get_conversation_top_status_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_sync_conversation_read_status(RCIMConversationType type, string targetId,
+                                                                    string channelId, long timestamp,
+                                                                    ref ios_sync_conversation_read_status_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_send_typing_status(RCIMConversationType type, string targetId, string channelId,
+                                                         string currentType);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_messages(RCIMConversationType type, string targetId, string channelId,
+                                                    long sentTime, RCIMTimeOrder order, RCIMMessageOperationPolicy policy,
+                                                    int count);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_messages(RCIMConversationType type, string targetId, string channelId,
+                                                   long sentTime, RCIMTimeOrder order, RCIMMessageOperationPolicy policy,
+                                                   int count, ref ios_get_messages_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_message_by_id(int messageId, ref ios_get_message_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_message_by_uid(string messageUId, ref ios_get_message_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_first_unread_message(RCIMConversationType type, string targetId,
+                                                                string channelId);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_first_unread_message(RCIMConversationType type, string targetId, string channelId,
+                                                               ref ios_get_first_unread_message_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_unread_mentioned_messages(RCIMConversationType type, string targetId,
+                                                                     string channelId);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_unread_mentioned_messages(RCIMConversationType type, string targetId,
+                                                                    string channelId,
+                                                                    ref ios_get_unread_mentioned_messages_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_insert_message(ref ios_class_warpper message, ref ios_insert_message_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_insert_messages(ref ios_class_warpper[] messages, int messages_count,
+                                                      ref ios_insert_messages_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_clear_messages(RCIMConversationType type, string targetId, string channelId,
+                                                     long timestamp, RCIMMessageOperationPolicy policy,
+                                                     ref ios_clear_messages_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_delete_local_messages(ref ios_class_warpper[] messages, int messages_count,
+                                                            ref ios_delete_local_messages_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_delete_messages(RCIMConversationType type, string targetId, string channelId,
+                                                      ref ios_class_warpper[] messages, int messages_count,
+                                                      ref ios_delete_messages_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_recall_message(ref ios_class_warpper message, ref ios_recall_message_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_send_private_read_receipt_message(
+            string targetId, string channelId, long timestamp, ref ios_send_private_read_receipt_message_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_send_group_read_receipt_request(
+            ref ios_class_warpper message, ref ios_send_group_read_receipt_request_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_send_group_read_receipt_response(
+            string targetId, string channelId, ref ios_class_warpper[] messages, int messages_count,
+            ref ios_send_group_read_receipt_response_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_update_message_expansion(string messageUId, ref ios_c_map_item[] expansion,
+                                                               int expansion_count,
+                                                               ref ios_update_message_expansion_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_remove_message_expansion_for_keys(
+            string messageUId, string[] keys, int keys_count, ref ios_remove_message_expansion_for_keys_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_change_message_sent_status(int messageId, RCIMSentStatus sentStatus,
+                                                                 ref ios_change_message_sent_status_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_change_message_receive_status(int messageId, RCIMReceivedStatus receivedStatus,
+                                                                    ref ios_change_message_received_status_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_join_chat_room(string targetId, int messageCount, bool autoCreate,
+                                                     ref ios_join_chat_room_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_leave_chat_room(string targetId, ref ios_leave_chat_room_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_chat_room_messages(string targetId, long timestamp, RCIMTimeOrder order,
+                                                              int count);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_chat_room_messages(string targetId, long timestamp, RCIMTimeOrder order,
+                                                             int count, ref ios_get_chat_room_messages_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_add_chat_room_entry(string targetId, string key, string value, bool deleteWhenLeft,
+                                                          bool overwrite, ref ios_add_chat_room_entry_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_add_chat_room_entries(string targetId, ref ios_c_map_item[] entries,
+                                                            int entries_count, bool deleteWhenLeft, bool overwrite,
+                                                            ref ios_add_chat_room_entries_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_chat_room_entry(string targetId, string key);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_chat_room_entry(string targetId, string key,
+                                                          ref ios_get_chat_room_entry_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_chat_room_all_entries(string targetId);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_chat_room_all_entries(string targetId,
+                                                                ref ios_get_chat_room_all_entries_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_remove_chat_room_entry(string targetId, string key, bool force,
+                                                             ref ios_remove_chat_room_entry_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_remove_chat_room_entries(string targetId, string[] keys, int keys_count, bool force,
+                                                               ref ios_remove_chat_room_entries_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_add_to_blacklist(string userId, ref ios_add_to_blacklist_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_remove_from_blacklist(string userId, ref ios_remove_from_blacklist_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_blacklist_status(string userId);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_blacklist_status(string userId, ref ios_get_blacklist_status_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_blacklist();
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_blacklist(ref ios_get_blacklist_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_search_messages(RCIMConversationType type, string targetId, string channelId,
+                                                      string keyword, long startTime, int count,
+                                                      ref ios_search_messages_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_search_messages_by_time_range(RCIMConversationType type, string targetId,
+                                                                    string channelId, string keyword, long startTime,
+                                                                    long endTime, int offset, int count,
+                                                                    ref ios_search_messages_by_time_range_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_search_messages_by_user_id(string userId, RCIMConversationType type, string targetId,
+                                                                 string channelId, long startTime, int count,
+                                                                 ref ios_search_messages_by_user_id_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_search_conversations(RCIMConversationType[] conversationTypes,
+                                                           int conversationTypes_count, string channelId,
+                                                           RCIMMessageType[] messageTypes, int messageTypes_count,
+                                                           string keyword, ref ios_search_conversations_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_change_notification_quiet_hours(
+            string startTime, int spanMinutes, RCIMPushNotificationQuietHoursLevel level,
+            ref ios_change_notification_quiet_hours_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_remove_notification_quiet_hours(
+            ref ios_remove_notification_quiet_hours_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_notification_quiet_hours();
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_notification_quiet_hours(ref ios_get_notification_quiet_hours_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_change_conversation_notification_level(
+            RCIMConversationType type, string targetId, string channelId, RCIMPushNotificationLevel level,
+            ref ios_change_conversation_notification_level_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_conversation_notification_level(RCIMConversationType type, string targetId,
+                                                                           string channelId);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_conversation_notification_level(
+            RCIMConversationType type, string targetId, string channelId,
+            ref ios_get_conversation_notification_level_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_change_conversation_type_notification_level(
+            RCIMConversationType type, RCIMPushNotificationLevel level,
+            ref ios_change_conversation_type_notification_level_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_conversation_type_notification_level(RCIMConversationType type);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_conversation_type_notification_level(
+            RCIMConversationType type, ref ios_get_conversation_type_notification_level_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_change_ultra_group_default_notification_level(
+            string targetId, RCIMPushNotificationLevel level,
+            ref ios_change_ultra_group_default_notification_level_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_ultra_group_default_notification_level(string targetId);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_ultra_group_default_notification_level(
+            string targetId, ref ios_get_ultra_group_default_notification_level_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_change_ultra_group_channel_default_notification_level(
+            string targetId, string channelId, RCIMPushNotificationLevel level,
+            ref ios_change_ultra_group_channel_default_notification_level_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_ultra_group_channel_default_notification_level(string targetId,
+                                                                                          string channelId);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_ultra_group_channel_default_notification_level(
+            string targetId, string channelId, ref ios_get_ultra_group_channel_default_notification_level_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_change_push_content_show_status(
+            bool showContent, ref ios_change_push_content_show_status_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_change_push_language(string language, ref ios_change_push_language_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_change_push_receive_status(bool receive,
+                                                                 ref ios_change_push_receive_status_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_send_group_message_to_designated_users(
+            ref ios_class_warpper message, string[] userIds, int userIds_count,
+            ref ios_send_group_message_to_designated_users_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_message_count(RCIMConversationType type, string targetId, string channelId);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_message_count(RCIMConversationType type, string targetId, string channelId,
+                                                        ref ios_get_message_count_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_top_conversations(RCIMConversationType[] conversationTypes,
+                                                             int conversationTypes_count, string channelId);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_top_conversations(RCIMConversationType[] conversationTypes,
+                                                            int conversationTypes_count, string channelId,
+                                                            ref ios_get_top_conversations_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_sync_ultra_group_read_status(string targetId, string channelId, long timestamp,
+                                                                   ref ios_sync_ultra_group_read_status_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_conversations_for_all_channel(RCIMConversationType type, string targetId);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_conversations_for_all_channel(
+            RCIMConversationType type, string targetId, ref ios_get_conversations_for_all_channel_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_modify_ultra_group_message(string messageUId, ref ios_class_warpper message,
+                                                                 ref ios_modify_ultra_group_message_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_recall_ultra_group_message(ref ios_class_warpper message, bool deleteRemote,
+                                                                 ref ios_recall_ultra_group_message_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_clear_ultra_group_messages(string targetId, string channelId, long timestamp,
+                                                                 RCIMMessageOperationPolicy policy,
+                                                                 ref ios_clear_ultra_group_messages_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_send_ultra_group_typing_status(string targetId, string channelId,
+                                                                     RCIMUltraGroupTypingStatus typingStatus,
+                                                                     ref ios_send_ultra_group_typing_status_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_clear_ultra_group_messages_for_all_channel(
+            string targetId, long timestamp, ref ios_clear_ultra_group_messages_for_all_channel_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_load_batch_remote_ultra_group_messages(ref ios_class_warpper[] messages,
+                                                                             int messages_count);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_get_batch_remote_ultra_group_messages(
+            ref ios_class_warpper[] messages, int messages_count,
+            ref ios_get_batch_remote_ultra_group_messages_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_update_ultra_group_message_expansion(
+            string messageUId, ref ios_c_map_item[] expansion, int expansion_count,
+            ref ios_update_ultra_group_message_expansion_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_remove_ultra_group_message_expansion_for_keys(
+            string messageUId, string[] keys, int keys_count,
+            ref ios_remove_ultra_group_message_expansion_for_keys_proxy callback);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern int im_change_log_level(RCIMLogLevel level);
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
         internal static extern long im_get_delta_time();
-
-        #endregion
-
-        #region 消息
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_send_message(ref im_message msg, OnSendMessageHandler sendMessageCallback);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_send_typing_status(RCConversationType type, string targetId,
-            string typingContent);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_send_directional_message(int type, string targetId, string[] userIdArray,
-            int userIdsLen, ref im_message imMsg,
-            OnSendMessageHandler sendMessageCallback);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_send_media_message(ref im_message imMsg, string pushContent, string pushData,
-            OnSendMessageHandler callback);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_text_message_draft(RCConversationType type, string targetId,
-            ref on_general_string_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_save_text_message_draft(RCConversationType type, string targetId,
-            string textDraft, ref on_general_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_clear_text_message_draft(RCConversationType type, string targetId,
-            ref on_general_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_set_offline_message_duration(int duration,
-            ref on_general_long_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_offline_message_duration(ref on_general_long_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_chatroom_messages(string targetId, Int64 recordTime,
-            int order, int count, ref on_result_chatroom_history_messages_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_history_message(RCConversationType type, string targetId, long sentTime,
-            int beforeCount, int afterCount, ref on_general_intptr_list_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_history_messages(RCConversationType type, string targetId,
-            Int64 lastMessageId, int count, ref on_general_intptr_list_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_messages(RCConversationType type, string targetId, Int64 recordTime,
-            int order, int count, ref on_general_intptr_list_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_message_by_uid(string messageUid,
-            ref on_general_intptr_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_message(Int64 messageId, ref on_general_intptr_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_insert_incoming_message(RCConversationType type, string targetId,
-            string senderId, int receivedStatus, IntPtr imMsgContentPtr, string objectName, Int64 sentTime,
-            ref on_general_intptr_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_insert_outgoing_message(RCConversationType type, string targetId,
-            RCSentStatus sentStatus, IntPtr imMsgContentPtr, string objectName, Int64 sendTime,
-            ref on_general_intptr_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_batch_insert_message(ref im_message[] imMessages, int length,
-            ref on_general_bool_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_send_read_receipt_message(RCConversationType type, string targetId,
-            long timestamp, ref on_general_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_send_read_receipt_request(ref im_message imMsg,
-            ref on_general_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_send_read_receipt_response(RCConversationType type, string targetId,
-            ref im_message[] imMsgArray, int imMsgArrayLen, ref on_general_callback_proxy p);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_clear_history_messages(RCConversationType type, string targetId, long recordTime,
-            bool clearRemote, ref on_general_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void
-            im_recall_message(ref im_message imMsg, string pushContent, ref on_general_intptr_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_search_messages(RCConversationType type, string targetId, string keyword,
-            int count, long beginTime, ref on_general_intptr_list_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_download_media_message(ref im_message imMsg,
-            OnImDownloadMediaProgress onProgress, OnImDownloadMediaCompleted onSucceed,
-            OnImDownloadMediaFailed onFailed, OnImDownloadMediaCanceled onCanceled);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_cancel_download_media_message(long messageId);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_message_begin_destruct(ref im_message imMsg);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_message_stop_destruct(ref im_message imMsg);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_remote_history_messages(RCConversationType type, string targetId,
-            long dateTime, int count, ref on_general_intptr_list_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_delete_remote_messages(RCConversationType type, string targetId,
-            im_message[] imMsgs, int imMsgsLen, ref on_general_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_clear_messages(RCConversationType type, string targetId,
-            ref on_general_bool_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_delete_messages(Int64[] messageIds, int count,
-            ref on_general_bool_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_set_message_extra(Int64 messageId, string extra,
-            ref on_general_bool_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_set_message_received_status(Int64 messageId, int status,
-            ref on_general_bool_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_set_message_sent_status(Int64 messageId, RCSentStatus sentStatus,
-            ref on_general_bool_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_first_unread_message(RCConversationType type, string targetId,
-            ref on_general_intptr_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_update_message_expansion(string messageUid, string[] keys, string[] values,
-            int kvLength, ref on_general_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_remove_message_expansion_for_key(string messageUid, string[] keyArray,
-            int keysLength, ref on_general_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_image_compress_config(double maxSize, double minSize, double quality);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_typing_update_seconds(int typingUpdateSeconds);
-
-        #endregion
-
-        #region 未读数
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_unread_count_target_id(RCConversationType type, string targetId,
-            ref on_general_int_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_unread_count_by_tag(string tagId, bool containsDND,
-            ref on_general_int_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_unread_count_conversation_types(RCConversationType[] conversationTypes,
-            int length, bool containsDND, ref on_general_int_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_total_unread_count(ref on_general_int_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_clear_messages_unread_status(RCConversationType type, string targetId,
-            ref on_general_callback_proxy context);
-
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_unread_mentioned_messages(RCConversationType type, string targetId,
-            ref on_general_intptr_list_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_sync_conversation_read_status(RCConversationType type, string targetId,
-            Int64 timeStamp, ref on_general_callback_proxy context);
-
-        #endregion
-
-        #region 会话
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_conversation(int type, string targetId,
-            ref on_general_intptr_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_remove_conversation(int type, string targetId,
-            ref on_general_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_conversation_list(RCConversationType[] conversationTypes, int length,
-            ref on_general_intptr_list_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_conversation_list_by_page(RCConversationType[] conversationTypes, int length,
-            long timestamp, int count, ref on_general_intptr_list_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_top_conversation_list(RCConversationType[] conversationTypes, int length,
-            ref on_general_intptr_list_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_conversation_list_from_tag_by_page(string tagId, long timestamp, int count,
-            ref on_general_intptr_list_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_blocked_conversation_list(RCConversationType[] conversationTypes, int length,
-            ref on_general_intptr_list_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_clear_conversations(RCConversationType[] conversationTypes, int length,
-            ref on_general_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_set_conversation_notification_status(RCConversationType type, string targetId,
-            RCConversationNotificationStatus notificationStatus,
-            ref on_general_int_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_conversation_notification_status(RCConversationType type, string targetId,
-            ref on_general_int_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_set_conversation_to_top(RCConversationType type, string targetId, bool isTop,
-            ref on_general_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_set_conversation_to_top_in_tag(RCConversationType type, string targetId,
-            string tagId, bool isTop, ref on_general_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_conversation_top_status_in_tag(RCConversationType type, string targetId,
-            string tagId, ref on_general_bool_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_search_conversations(string keyword, RCConversationType[] convTypes, int convTypesLength ,
-            string[] objectNames, int objectNamesLength, ref on_general_callback_proxy context);
-
-        #endregion
-
-
-        #region 黑名单
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_add_to_black_list(string userId, ref on_general_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_remove_from_black_list(string userId, ref on_general_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_black_list_status(string userId, ref on_general_int_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_black_list(ref on_general_intptr_list_callback_proxy context);
-
-        #endregion
-
-        #region 通知提醒
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_set_notification_quiet_hours(string startTime, int spanMinutes,
-            ref on_general_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_remove_notification_quiet_hours(ref on_general_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_notification_quiet_hours(
-            ref on_result_notification_quiet_info_callback_proxy context);
-
-        #endregion
-
-        #region 标签
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_add_tag(ref im_tag_info tagInfo, ref on_general_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_remove_tag(ref im_tag_info tagInfo, ref on_general_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_update_tag(ref im_tag_info tagInfo, ref on_general_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_tags(ref on_general_intptr_list_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_add_conversations_to_tag(IntPtr conversationIds, int conversationIdsLen,
-            string tagId, ref on_general_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_remove_conversations_from_tag(string tagId, IntPtr convIds, int count,
-            ref on_general_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_remove_tags_from_conversation();
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_tags_from_conversation(RCConversationType type, string targetId,
-            ref on_general_intptr_list_callback_proxy context);
-
-        #endregion
-
-        #region 聊天室
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_join_chatroom(string roomId, ref on_general_callback_proxy callback,
-            int msgCount);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_join_exist_chatroom(string roomId, int msgCount,
-            ref on_general_callback_proxy callback);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_quit_chatroom(string roomId, ref on_general_callback_proxy callback);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_chatroom_info(string roomId, int memberCount, int order,
-            ref on_general_intptr_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_set_chatroom_entry(bool is_force, string room_id, string key, string value,
-            bool is_send_notification, bool auto_delete, string extra, ref on_general_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_chatroom_entry(string room_id, string key,
-            ref on_result_chat_room_entry_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_get_all_chatroom_entries(string room_id,
-            ref on_result_chat_room_all_entries_callback_proxy context);
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_remove_chatroom_entry(bool is_force, string room_id, string key,
-            bool is_send_notification, string extra, ref on_general_callback_proxy context);
-
-
-        [DllImport(MyLibName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        internal static extern void im_set_devicetoken(string deviceToken);
-        
-        #endregion
-
-        #endregion
+    
+        [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        internal static extern void im_set_IRCIMIWListener(
+            OnMessageReceived onMessageReceived, OnConnectionStatusChanged onConnectionStatusChanged,
+            OnConversationTopStatusSynced onConversationTopStatusSynced,
+            OnConversationNotificationLevelSynced onConversationNotificationLevelSynced,
+            OnRemoteMessageRecalled onRemoteMessageRecalled, OnPrivateReadReceiptReceived onPrivateReadReceiptReceived,
+            OnRemoteMessageExpansionUpdated onRemoteMessageExpansionUpdated,
+            OnRemoteMessageExpansionForKeyRemoved onRemoteMessageExpansionForKeyRemoved,
+            OnChatRoomMemberChanged onChatRoomMemberChanged, OnTypingStatusChanged onTypingStatusChanged,
+            OnConversationReadStatusSyncMessageReceived onConversationReadStatusSyncMessageReceived,
+            OnChatRoomEntriesSynced onChatRoomEntriesSynced, OnChatRoomEntriesChanged onChatRoomEntriesChanged,
+            OnRemoteUltraGroupMessageExpansionUpdated onRemoteUltraGroupMessageExpansionUpdated,
+            OnRemoteUltraGroupMessageModified onRemoteUltraGroupMessageModified,
+            OnRemoteUltraGroupMessageRecalled onRemoteUltraGroupMessageRecalled,
+            OnUltraGroupReadTimeReceived onUltraGroupReadTimeReceived,
+            OnUltraGroupTypingStatusChanged onUltraGroupTypingStatusChanged, OnMessageBlocked onMessageBlocked,
+            OnChatRoomStatusChanged onChatRoomStatusChanged,
+            OnGroupMessageReadReceiptRequestReceived onGroupMessageReadReceiptRequestReceived,
+            OnGroupMessageReadReceiptResponseReceived onGroupMessageReadReceiptResponseReceived, OnConnected onConnected,
+            OnDatabaseOpened onDatabaseOpened, OnConversationLoaded onConversationLoaded,
+            OnConversationsLoaded onConversationsLoaded, OnConversationRemoved onConversationRemoved,
+            OnConversationsRemoved onConversationsRemoved, OnTotalUnreadCountLoaded onTotalUnreadCountLoaded,
+            OnUnreadCountLoaded onUnreadCountLoaded,
+            OnUnreadCountByConversationTypesLoaded onUnreadCountByConversationTypesLoaded,
+            OnUnreadMentionedCountLoaded onUnreadMentionedCountLoaded,
+            OnUltraGroupAllUnreadCountLoaded onUltraGroupAllUnreadCountLoaded,
+            OnUltraGroupAllUnreadMentionedCountLoaded onUltraGroupAllUnreadMentionedCountLoaded,
+            OnUltraGroupConversationsSynced onUltraGroupConversationsSynced, OnUnreadCountCleared onUnreadCountCleared,
+            OnDraftMessageSaved onDraftMessageSaved, OnDraftMessageCleared onDraftMessageCleared,
+            OnDraftMessageLoaded onDraftMessageLoaded, OnBlockedConversationsLoaded onBlockedConversationsLoaded,
+            OnConversationTopStatusChanged onConversationTopStatusChanged,
+            OnConversationTopStatusLoaded onConversationTopStatusLoaded,
+            OnConversationReadStatusSynced onConversationReadStatusSynced, OnMessageAttached onMessageAttached,
+            OnMessageSent onMessageSent, OnMediaMessageAttached onMediaMessageAttached,
+            OnMediaMessageSending onMediaMessageSending, OnSendingMediaMessageCanceled onSendingMediaMessageCanceled,
+            OnMediaMessageSent onMediaMessageSent, OnMediaMessageDownloading onMediaMessageDownloading,
+            OnMediaMessageDownloaded onMediaMessageDownloaded,
+            OnDownloadingMediaMessageCanceled onDownloadingMediaMessageCanceled, OnMessagesLoaded onMessagesLoaded,
+            OnUnreadMentionedMessagesLoaded onUnreadMentionedMessagesLoaded,
+            OnFirstUnreadMessageLoaded onFirstUnreadMessageLoaded, OnMessageInserted onMessageInserted,
+            OnMessagesInserted onMessagesInserted, OnMessagesCleared onMessagesCleared,
+            OnLocalMessagesDeleted onLocalMessagesDeleted, OnMessagesDeleted onMessagesDeleted,
+            OnMessageRecalled onMessageRecalled, OnPrivateReadReceiptMessageSent onPrivateReadReceiptMessageSent,
+            OnMessageExpansionUpdated onMessageExpansionUpdated,
+            OnMessageExpansionForKeysRemoved onMessageExpansionForKeysRemoved,
+            OnMessageReceiveStatusChanged onMessageReceiveStatusChanged,
+            OnMessageSentStatusChanged onMessageSentStatusChanged, OnChatRoomJoined onChatRoomJoined,
+            OnChatRoomJoining onChatRoomJoining, OnChatRoomLeft onChatRoomLeft,
+            OnChatRoomMessagesLoaded onChatRoomMessagesLoaded, OnChatRoomEntryAdded onChatRoomEntryAdded,
+            OnChatRoomEntriesAdded onChatRoomEntriesAdded, OnChatRoomEntryLoaded onChatRoomEntryLoaded,
+            OnChatRoomAllEntriesLoaded onChatRoomAllEntriesLoaded, OnChatRoomEntryRemoved onChatRoomEntryRemoved,
+            OnChatRoomEntriesRemoved onChatRoomEntriesRemoved, OnBlacklistAdded onBlacklistAdded,
+            OnBlacklistRemoved onBlacklistRemoved, OnBlacklistStatusLoaded onBlacklistStatusLoaded,
+            OnBlacklistLoaded onBlacklistLoaded, OnMessagesSearched onMessagesSearched,
+            OnMessagesSearchedByTimeRange onMessagesSearchedByTimeRange,
+            OnMessagesSearchedByUserId onMessagesSearchedByUserId, OnConversationsSearched onConversationsSearched,
+            OnGroupReadReceiptRequestSent onGroupReadReceiptRequestSent,
+            OnGroupReadReceiptResponseSent onGroupReadReceiptResponseSent,
+            OnNotificationQuietHoursChanged onNotificationQuietHoursChanged,
+            OnNotificationQuietHoursRemoved onNotificationQuietHoursRemoved,
+            OnNotificationQuietHoursLoaded onNotificationQuietHoursLoaded,
+            OnConversationNotificationLevelChanged onConversationNotificationLevelChanged,
+            OnConversationNotificationLevelLoaded onConversationNotificationLevelLoaded,
+            OnConversationTypeNotificationLevelChanged onConversationTypeNotificationLevelChanged,
+            OnConversationTypeNotificationLevelLoaded onConversationTypeNotificationLevelLoaded,
+            OnUltraGroupDefaultNotificationLevelChanged onUltraGroupDefaultNotificationLevelChanged,
+            OnUltraGroupDefaultNotificationLevelLoaded onUltraGroupDefaultNotificationLevelLoaded,
+            OnUltraGroupChannelDefaultNotificationLevelChanged onUltraGroupChannelDefaultNotificationLevelChanged,
+            OnUltraGroupChannelDefaultNotificationLevelLoaded onUltraGroupChannelDefaultNotificationLevelLoaded,
+            OnPushContentShowStatusChanged onPushContentShowStatusChanged, OnPushLanguageChanged onPushLanguageChanged,
+            OnPushReceiveStatusChanged onPushReceiveStatusChanged, OnMessageCountLoaded onMessageCountLoaded,
+            OnTopConversationsLoaded onTopConversationsLoaded,
+            OnGroupMessageToDesignatedUsersAttached onGroupMessageToDesignatedUsersAttached,
+            OnGroupMessageToDesignatedUsersSent onGroupMessageToDesignatedUsersSent,
+            OnUltraGroupReadStatusSynced onUltraGroupReadStatusSynced,
+            OnConversationsLoadedForAllChannel onConversationsLoadedForAllChannel,
+            OnUltraGroupUnreadMentionedCountLoaded onUltraGroupUnreadMentionedCountLoaded,
+            OnUltraGroupUnreadCountLoaded onUltraGroupUnreadCountLoaded,
+            OnUltraGroupMessageModified onUltraGroupMessageModified,
+            OnUltraGroupMessageRecalled onUltraGroupMessageRecalled,
+            OnUltraGroupMessagesCleared onUltraGroupMessagesCleared,
+            OnUltraGroupMessagesClearedForAllChannel onUltraGroupMessagesClearedForAllChannel,
+            OnUltraGroupTypingStatusSent onUltraGroupTypingStatusSent,
+            OnBatchRemoteUltraGroupMessagesLoaded onBatchRemoteUltraGroupMessagesLoaded,
+            OnUltraGroupMessageExpansionUpdated onUltraGroupMessageExpansionUpdated,
+            OnUltraGroupMessageExpansionForKeysRemoved onUltraGroupMessageExpansionForKeysRemoved);
     }
 }
 #endif

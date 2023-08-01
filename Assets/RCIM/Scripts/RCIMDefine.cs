@@ -1,446 +1,562 @@
-﻿//
-//  Copyright © 2021 RongCloud. All rights reserved.
-//
-
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
+using AOT;
 
 namespace cn_rongcloud_im_unity
 {
-    [Serializable]
-    public enum RCConversationType
+    public enum RCIMImportanceHW
     {
-        // 单聊会话类型
-        Private = 1,
-        Group = 3,
-        // 聊天室会话类型
-        ChatRoom = 4,
-        System = 6,
+        /// <summary>
+        /// 表示消息为服务与通讯类。消息提醒方式为锁屏+铃声+震动
+        /// </summary>
+        NORMAL,
+    
+        /// <summary>
+        /// 表示消息为资讯营销类。消息提醒方式为静默通知，仅在下拉通知栏展示
+        /// </summary>
+        LOW
     }
-
-    [Serializable]
-    public enum RCSentStatus
+    
+    public enum RCIMMessageOperationPolicy
     {
-        Sending = 10,
-        Failed = 20,
-        Sent = 30,
-        Received = 40,
-        Read = 50,
-        Destoryed = 60,
-        Canceled = 70
+        /// <summary>
+        /// 本地
+        /// </summary>
+        LOCAL,
+    
+        /// <summary>
+        /// 远端
+        /// </summary>
+        REMOTE,
+    
+        /// <summary>
+        /// 本地和远端
+        /// </summary>
+        LOCAL_REMOTE
     }
-
-    [Serializable]
-    public enum RCMessageDirection
+    
+    public enum RCIMVIVOPushType
     {
-        Send = 1,
-        Receive = 2,
+        /// <summary>
+        /// 运营消息
+        /// </summary>
+        OPERATE,
+    
+        /// <summary>
+        /// 系统消息
+        /// </summary>
+        SYSTEM
     }
-
-    public class RCReceivedStatus
+    
+    public enum RCIMSentStatus
     {
-        public static readonly int Read = 0x1;
-        public static readonly int Listened = 0x2;
-        public static readonly int Downloaded = 0x4;
-        public static readonly int Retrieved = 0x8;
-        public static readonly int MultipReceived = 0x10;
-
-        public int Flag { get; private set; }
-        public bool IsRead { get { return (Flag & Read) == Read; } }
-
-        public bool IsListened { get { return (Flag & Listened) == Listened; } }
-        public bool IsDownloaded { get { return (Flag & Downloaded) == Downloaded; } }
-        public bool IsRetrieved { get { return (Flag & Retrieved) == Retrieved; } }
-        public bool IsMultipleReceived { get { return (Flag & MultipReceived) == MultipReceived; } }
-
-        internal RCReceivedStatus()
-        {
-
-        }
-
-        internal RCReceivedStatus(int flag) : this()
-        {
-            this.Flag = flag;
-        }
-
-        public override string ToString()
-        {
-            return $"Flag {Flag}";
-        }
+        /// <summary>
+        /// 发送中
+        /// </summary>
+        SENDING,
+    
+        /// <summary>
+        /// 发送失败
+        /// </summary>
+        FAILED,
+    
+        /// <summary>
+        /// 已发送
+        /// </summary>
+        SENT,
+    
+        /// <summary>
+        /// 对方已接收
+        /// </summary>
+        RECEIVED,
+    
+        /// <summary>
+        /// 对方已读
+        /// </summary>
+        READ,
+    
+        /// <summary>
+        /// 对方已销毁
+        /// </summary>
+        DESTROYED,
+    
+        /// <summary>
+        /// 对方已取消
+        /// </summary>
+        CANCELED
     }
-
-    public class RCChatRoomInfo
+    
+    public enum RCIMPushNotificationQuietHoursLevel
     {
-        public string ChatRoomId { get; set; }
-        public RCChatRoomMemberOrder Order { get; set; }
-        public IList<RCChatRoomMemberInfo> Members { get; set; }
-        public int TotalMemberCount { get; set; }
-
-        public RCChatRoomInfo(string chatRoomId, RCChatRoomMemberOrder memberOrder, IList<RCChatRoomMemberInfo> members, int totalMemberCount)
-        {
-            this.ChatRoomId = chatRoomId;
-            this.Order = memberOrder;
-            this.Members = members;
-            this.TotalMemberCount = totalMemberCount;
-        }
+        /// <summary>
+        /// 未设置。如未设置，SDK 会依次查询消息所属群的用户级别免打扰设置及其他非用户级别设置，再判断是否需要推送通知
+        /// </summary>
+        NONE,
+    
+        /// <summary>
+        /// 与融云服务端断开连接后，当前用户仅在指定时段内针对指定会话中提及（@）当前用户和全体群成员的消息接收通知
+        /// </summary>
+        MENTION_MESSAGE,
+    
+        /// <summary>
+        /// 当前用户在指定时段内针对任何消息都不接收推送通知
+        /// </summary>
+        BLOCKED
     }
-
-    public class RCChatRoomMemberInfo
+    
+    public enum RCIMMessageDirection
     {
-        public string UserId { get; set; }
-        public Int64 JoinTime { get; set; }
-
-        public RCChatRoomMemberInfo(string userId, Int64 joinTime)
-        {
-            this.UserId = userId;
-            this.JoinTime = joinTime;
-        }
+        /// <summary>
+        /// 发送方
+        /// </summary>
+        SEND,
+    
+        /// <summary>
+        /// 接收方
+        /// </summary>
+        RECEIVE
     }
-
-    public enum RCChatRoomDestroyType
+    
+    public enum RCIMReceivedStatus
     {
         /// <summary>
-        /// 未知原因
+        /// 未读
         /// </summary>
-        Unknown = -1,
+        UNREAD,
+    
         /// <summary>
-        /// 由用户销毁
+        /// 已读
         /// </summary>
-        Manual = 0,
+        READ,
+    
         /// <summary>
-        /// 系统自动销毁
+        /// 已听
         /// </summary>
-        Auto = 3,
+        LISTENED,
+    
+        /// <summary>
+        /// 已下载
+        /// </summary>
+        DOWNLOADED,
+    
+        /// <summary>
+        /// 该消息已经被其他登录的多端收取过。（即该消息已经被其他端收取过后。当前端才登录，并重新拉取了这条消息。客户可以通过这个状态更新
+        /// UI，比如不再提示）
+        /// </summary>
+        RETRIEVED,
+    
+        /// <summary>
+        /// 该消息是被多端同时收取的。（即其他端正同时登录，一条消息被同时发往多端。客户可以通过这个状态值更新自己的某些 UI
+        /// 状态）
+        /// </summary>
+        MULTIPLE_RECEIVE
     }
-
-    public enum RCConversationNotificationStatus
+    
+    public enum RCIMChatRoomMemberActionType
     {
-        DoNotDisturb = 0,
-        Notify = 1,
+        /// <summary>
+        /// 未知
+        /// </summary>
+        UNKNOWN,
+    
+        /// <summary>
+        /// 已加入
+        /// </summary>
+        JOIN,
+    
+        /// <summary>
+        /// 已离开
+        /// </summary>
+        LEAVE
     }
-
-    public enum RCChatRoomMemberOrder
+    
+    public enum RCIMPushNotificationLevel
     {
-        Asc = 1,
-        Desc = 2,
+        /// <summary>
+        /// 与融云服务端断开连接后，当前用户可针对指定类型会话中的所有消息接收通知
+        /// </summary>
+        ALL_MESSAGE,
+    
+        /// <summary>
+        /// 未设置。未设置时均为此初始状态
+        /// </summary>
+        NONE,
+    
+        /// <summary>
+        /// 与融云服务端断开连接后，当前用户仅针对指定类型的会话中提及（@）当前用户和全体群成员的消息接收通知
+        /// </summary>
+        MENTION,
+    
+        /// <summary>
+        /// 与融云服务端断开连接后，当前用户仅针对指定类型的会话中提及（@）当前用户的消息接收通知。例如：张三只会接收 “@张三
+        /// Hello” 的消息的通知
+        /// </summary>
+        MENTION_USERS,
+    
+        /// <summary>
+        /// 与融云服务端断开连接后，当前用户仅针对指定类型的会话中提及（@）全部群成员的消息接收通知
+        /// </summary>
+        MENTION_ALL,
+    
+        /// <summary>
+        /// 当前用户针对指定类型的会话中的任何消息都不接收推送通知
+        /// </summary>
+        BLOCKED
     }
-
-    public enum RCBlackListStatus
+    
+    public enum RCIMMessageType
     {
-        InBlackList = 0,
-        NotInBlackList = 1,
+        /// <summary>
+        /// 无效类型
+        /// </summary>
+        UNKNOWN,
+    
+        /// <summary>
+        /// 自定义
+        /// </summary>
+        CUSTOM,
+    
+        /// <summary>
+        /// 文本
+        /// </summary>
+        TEXT,
+    
+        /// <summary>
+        /// 语音
+        /// </summary>
+        VOICE,
+    
+        /// <summary>
+        /// 图片
+        /// </summary>
+        IMAGE,
+    
+        /// <summary>
+        /// 文件
+        /// </summary>
+        FILE,
+    
+        /// <summary>
+        /// 小视频
+        /// </summary>
+        SIGHT,
+    
+        /// <summary>
+        /// GIF 图
+        /// </summary>
+        GIF,
+    
+        /// <summary>
+        /// 撤回
+        /// </summary>
+        RECALL,
+    
+        /// <summary>
+        /// 引用
+        /// </summary>
+        REFERENCE,
+    
+        /// <summary>
+        /// 命令
+        /// </summary>
+        COMMAND,
+    
+        /// <summary>
+        /// 命令通知
+        /// </summary>
+        COMMAND_NOTIFICATION,
+    
+        /// <summary>
+        /// 位置消息
+        /// </summary>
+        LOCATION,
+    
+        /// <summary>
+        /// 用户自定义消息
+        /// </summary>
+        USER_CUSTOM
     }
-
-    public enum RCMentionedType
+    
+    public enum RCIMMessageBlockType
     {
-        All = 1,
-        Users = 2,
+        /// <summary>
+        /// 未知
+        /// </summary>
+        UNKNOWN,
+    
+        /// <summary>
+        /// 全局敏感词：命中了融云内置的全局敏感词
+        /// </summary>
+        GLOBAL,
+    
+        /// <summary>
+        /// 自定义敏感词拦截：命中了客户在融云自定义的敏感词
+        /// </summary>
+        CUSTOM,
+    
+        /// <summary>
+        /// 第三方审核拦截：命中了第三方（数美）或模板路由决定不下发的状态
+        /// </summary>
+        THIRD_PARTY
     }
-
-    public enum RCConnectionStatus
+    
+    public enum RCIMTimeOrder
     {
-        Unknown = -1,
-
         /// <summary>
-        /// 连接成功
+        /// 时间递减
         /// </summary>
-        Connected = 0,
-
+        BEFORE,
+    
         /// <summary>
-        /// 连接中
+        /// 时间递增
         /// </summary>
-        Connecting = 1,
-
-        /// <summary>
-        /// 用户账户在其他设备登录，本机会被踢掉线
-        /// </summary>
-        KickedByOtherClient = 2,
-
-        /// <summary>
-        /// 网络不可用
-        /// </summary>
-        NetworkUnavailable = 3,
-
-        /// <summary>
-        /// Token 不正确
-        /// </summary>
-        TokenIncorrect = 4,
-
-        /// <summary>
-        /// 用户被开发者后台封禁
-        /// </summary>
-        UserBlocked = 5,
-
-        /// <summary>
-        /// 用户主动调用 disconnect 或 logout 接口断开连接
-        /// </summary>
-        DisConnected = 6,
-
-        /// <summary>
-        /// 连接暂时挂起（多是由于网络问题导致），SDK 会在合适时机进行自动重连
-        /// </summary>
-        Suspend = 13,
-
-        /// <summary>
-        /// 自动连接超时，SDK 将不会继续连接，用户需要做超时处理，再自行调用 connectWithToken 接口进行连接
-        /// </summary>
-        Timeout = 14,
+        AFTER
     }
-
-    public enum RCErrorCode
+    
+    public enum RCIMCustomMessagePolicy
     {
         /// <summary>
-        /// 应用没有调用 connect() 方法，即调用业务, 请在连接成功后调用此方法
+        /// 客户端不存储，支持离线消息机制，不计入未读消息数
         /// </summary>
-        AppNotConnect = -4,
-
+        COMMAND,
+    
         /// <summary>
-        /// 取消暂停失败
+        /// 客户端存储，支持离线消息机制，且存入服务端历史消息，计入未读消息数
         /// </summary>
-        OperationMediaNotFound = -3,
-
+        NORMAL,
+    
         /// <summary>
-        /// Android IPC 进程意外终止
+        /// 客户端不存储，服务端不存储，不计入未读消息数
         /// </summary>
-        IpcDisConnect = -2,
-        UnKnown = -1,
-
-        /// 成功
-        Succeed = 0,
-
-        ///已被对方加入黑名单
-        RejectedByBlackList = 405,
-
-        ///发送消息频率过高，1秒最多允许发送5条消息
-        SendMsgOverFrequency = 20604,
-
+        STATUS,
+    
         /// <summary>
-        /// 操作被禁止, 此错误码已被弃用
+        /// 客户端存储，支持离线消息机制，且存入服务端历史消息，不计入未读消息数
         /// </summary>
-        OperationBlocked = 20605,
-
-        /// <summary>
-        /// 操作不支持, 仅私有云有效，服务端禁用了该操作
-        /// </summary>
-        OperationNotSupport = 20606,
-
-        /// <summary>
-        /// 请求超出了调用频率限制，请稍后再试。 <p>接口调用过于频繁，请稍后再试。</p>
-        /// </summary>
-        RequestOverFrequency = 20607,
-
-        ///不在该群组中
-        NotInGroup = 22406,
-
-        ///在群组中被禁言
-        ForbiddenInGroup = 22408,
-
-        ///不在该聊天室中
-        NotInChatRoom = 23406,
-
-        /// <summary>
-        /// 聊天室状态值不存在
-        /// </summary>
-        ChatRoomKeyNotExist = 23427,
-
-        /// <summary>
-        /// 聊天室批量设置或删除KV部分不成功
-        /// </summary>
-        ChatRoomKVStoreNotAllSuccess = 23428,
-
-        /// <summary>
-        /// 聊天室批量设置或删除KV数量超限（最多一次10条）
-        /// </summary>
-        ChatRoomKVStoreOutOfLimit = 23429,
-
-        ///在聊天室中被禁言
-        ForbiddenInChatRoom = 23408,
-
-        ///AppKey 错误
-        AppKeyError = 31002,
-
-        ///token 无效，需要获取新的 token 连接 IM
-        ///一般有已下两种原因
-        ///一是token错误，请您检查客户端初始化使用的AppKey和您服务器获取token使用的AppKey是否一致；
-        ///二是token过期，是因为您在开发者后台设置了token过期时间，您需要请求您的服务器重新获取token并再次用新的token建立连接。
-        TokenIncorrect = 31004,
-
-        /// AppKey 与 Token 不匹配，需要获取新的 token 连接 IM
-        /// 原因同 [TokenIncorrect]
-        NotAuthrorized = 31005,
-
-        /// AppKey 被封禁或者已删除，请检查 AppKey 是否正确
-        AppBlockedOrDeleted = 31008,
-
-        /// 用户被封禁，请检查 Token 是否正确以及对应的 UserId 是否被封禁
-        UserBlocked = 31009,
-        
-        /// <summary>
-        /// 连接过于频繁
-        /// </summary>
-        ConnOverFrequency = 30015,
-        
-        /// <summary>
-        /// 消息大小超限，消息体（序列化成 json 格式之后的内容）最大 128k bytes。
-        /// </summary>
-        MessageSizeOutOfLimit = 30016,
-
-        /// 被其他端踢掉线
-        KickByOtherClient = 31010,
-
-        /// SDK 没有初始化，使用任何 SDK 接口前必须先调用 init 接口
-        ClientNotInit = 33001,
-
-        /// 非法参数，请检查调用接口传入的参数
-        InvalidParameter = 33003,
-
-        /// 历史消息云存储功能未开通
-        RoamingServiceUnAvailable = 33007,
-
+        STORAGE
+    }
+    
+    public enum RCIMChatRoomStatus
+    {
         /// <summary>
         /// 聊天室被重置
         /// </summary>
-        ChatRoomReset = 33009,
-
+        RESET,
+    
         /// <summary>
-        /// 连接已存在
+        /// 用户调用IM Server API 手动销毁聊天室
         /// </summary>
-        ConnectionExist = 34001,
-
-        /// 小视频消息时长超限，最长 10s
-        SightMessageDurationLimitExceed = 34002,
+        DESTROY_MANUAL,
+    
+        /// <summary>
+        /// IM Server 自动销毁聊天室
+        /// </summary>
+        DESTROY_AUTO
     }
-
-    public enum RCOperationStatus
-    {
-        Success = 0,
-        Failed = 1,
-    }
-
-    public enum RCTimestampOrder
-    {
-        Desc = 0,
-        Asc = 1,
-    }
-
-    public enum RCBlockType
-    {
-        /// 未知类型
-        Unknown = 0,
-
-        /// 全局敏感词：命中了融云内置的全局敏感词
-        Global = 1,
-
-        /// 自定义敏感词拦截：命中了客户在融云自定义的敏感词
-        Custom = 2,
-
-        /// 第三方审核拦截：命中了第三方（数美）或模板路由决定不下发的状态
-        Thirdparty = 3,
-    }
-    public enum RCPullOrder
+    
+    public enum RCIMConversationType
     {
         /// <summary>
-        /// 降序，结合传入的时间戳参数，获取发送时间递增的消息
+        /// 暂不支持，SDK 保留类型，开发者不可使用
         /// </summary>
-        Des = 0,
+        INVALID,
+    
         /// <summary>
-        /// 升序，结合传入的时间戳参数，获取发送时间递减的消息
+        /// 单聊会话
         /// </summary>
-        Asc = 1
+        PRIVATE,
+    
+        /// <summary>
+        /// 群聊会话
+        /// </summary>
+        GROUP,
+    
+        /// <summary>
+        /// 聊天室会话
+        /// </summary>
+        CHATROOM,
+    
+        /// <summary>
+        /// 系统会话
+        /// </summary>
+        SYSTEM,
+    
+        /// <summary>
+        /// 超级群会话
+        /// </summary>
+        ULTRA_GROUP
     }
-    public class RCHistoryMessageOption
+    
+    public enum RCIMErrorCode
     {
         /// <summary>
-        /// 从该时间点开始获取消息。即：消息中的 sentTime；如果本地库中没有消息，第一次可传 0，否则传入最早消息的 sentTime，获取最新 count 条。
+        ///
         /// </summary>
-        public Int64 DateTime { get; set; }
+        SUCCESS,
+    
         /// <summary>
-        /// 要获取的消息数量，最多 20 条
+        ///
         /// </summary>
-        public int Count { get; set; }
+        PARAM_ERROR,
+    
         /// <summary>
-        /// 拉取顺序
+        ///
         /// </summary>
-        public RCPullOrder PullOrder { get; set; }
+        ENGINE_DESTROYED,
+    
+        /// <summary>
+        ///
+        /// </summary>
+        NATIVE_OPERATION_ERROR,
+    
+        /// <summary>
+        ///
+        /// </summary>
+        RESULT_UNKNOWN
     }
-
-    public class RCNotificationQuietHourInfo
+    
+    public enum RCIMUltraGroupTypingStatus
     {
         /// <summary>
-        /// 消息通知免打扰时间, 格式 HH:MM:SS
+        /// 正在输入文本
         /// </summary>
-        public string StartTime { get; set; }
-        /// <summary>
-        /// 间隔分钟数 0 &lt; spanMins &lt; 1440。
-        /// </summary>
-        public int SpanMinutes { get; set; }
-
-        public RCNotificationQuietHourInfo(string startTime, int spanMinutes)
-        {
-            this.StartTime = startTime;
-            this.SpanMinutes = spanMinutes;
-        }
-
-        public override string ToString()
-        {
-            return $"{this.GetType().Name}: StartTime {StartTime} SpanMinutes {SpanMinutes}";
-        }
+        TEXT
     }
-
-    public class RCTagInfo
+    
+    public enum RCIMMentionedType
     {
         /// <summary>
-        /// 标签唯一标识，字符型，长度不超过 10 个字符
+        /// @ 所有人
         /// </summary>
-        public string TagId { get; set; }
+        ALL,
+    
         /// <summary>
-        /// 长度不超过 15 个字，标签名称可以重复
+        /// @ 指定的人
         /// </summary>
-        public string TagName { get; set; }
-        /// <summary>
-        /// 匹配的会话个数
-        /// </summary>
-        public int Count { get; set; }
-        /// <summary>
-        /// 时间戳由协议栈提供
-        /// </summary>
-        public Int64 TimeStamp { get; set; }
-
-        public RCTagInfo(string tagId, string tagName)
-        {
-            this.TagId = tagId;
-            this.TagName = tagName;
-        }
-
-        public RCTagInfo(string tagId, string tagName, int count, Int64 timestamp)
-        {
-            this.TagId = tagId;
-            this.TagName = tagName;
-            this.Count = count;
-            this.TimeStamp = timestamp;
-        }
-
-        public override string ToString()
-        {
-            return $"{this.GetType().Name}: id {TagId}, name {TagName}, count {Count}, ts {TimeStamp}";
-        }
+        PART
     }
-
-    public class RCConversationTagInfo
+    
+    public enum RCIMChatRoomEntriesOperationType
     {
-        public RCTagInfo TagInfo { get; set; }
-        public bool IsTop { get; set; }
-
-        public RCConversationTagInfo(RCTagInfo tagInfo, bool isTop)
-        {
-            this.TagInfo = tagInfo;
-            this.IsTop = isTop;
-        }
-
-        public override string ToString()
-        {
-            return $"{TagInfo} isTopped {IsTop}";
-        }
+        /// <summary>
+        /// 更新操作
+        /// </summary>
+        Update,
+    
+        /// <summary>
+        /// 删除操作
+        /// </summary>
+        Remove
+    }
+    
+    public enum RCIMLogLevel
+    {
+        /// <summary>
+        /// 不输出任何日志
+        /// </summary>
+        NONE,
+    
+        /// <summary>
+        /// 只输出错误的日志
+        /// </summary>
+        ERROR,
+    
+        /// <summary>
+        /// 输出错误和警告的日志
+        /// </summary>
+        WARN,
+    
+        /// <summary>
+        /// 输出错误、警告和一般的日志
+        /// </summary>
+        INFO,
+    
+        /// <summary>
+        /// 输出输出错误、警告和一般的日志以及 debug 日志
+        /// </summary>
+        DEBUG,
+    
+        /// <summary>
+        /// 输出所有日志
+        /// </summary>
+        VERBOSE
+    }
+    
+    public enum RCIMBlacklistStatus
+    {
+        /// <summary>
+        /// 未知
+        /// </summary>
+        UNKNOWN,
+    
+        /// <summary>
+        /// 在黑名单中
+        /// </summary>
+        IN_BLACKLIST,
+    
+        /// <summary>
+        /// 不在黑名单
+        /// </summary>
+        NOT_IN_BLACKLIST
+    }
+    
+    public enum RCIMConnectionStatus
+    {
+        /// <summary>
+        /// 网络不可用
+        /// </summary>
+        NETWORK_UNAVAILABLE,
+    
+        /// <summary>
+        /// 连接成功
+        /// </summary>
+        CONNECTED,
+    
+        /// <summary>
+        /// 连接中
+        /// </summary>
+        CONNECTING,
+    
+        /// <summary>
+        /// 未连接
+        /// </summary>
+        UNCONNECTED,
+    
+        /// <summary>
+        /// 用户账户在其他设备登录，本机会被踢掉线
+        /// </summary>
+        KICKED_OFFLINE_BY_OTHER_CLIENT,
+    
+        /// <summary>
+        /// Token 不正确
+        /// </summary>
+        TOKEN_INCORRECT,
+    
+        /// <summary>
+        /// 用户被开发者后台封禁
+        /// </summary>
+        CONN_USER_BLOCKED,
+    
+        /// <summary>
+        /// 用户主动调用 disconnect 或 logout 接口断开连接
+        /// </summary>
+        SIGN_OUT,
+    
+        /// <summary>
+        /// 连接暂时挂起（多是由于网络问题导致），SDK 会在合适时机进行自动重连
+        /// </summary>
+        SUSPEND,
+    
+        /// <summary>
+        /// 自动连接超时，SDK 将不会继续连接，用户需要做超时处理，再自行调用 connectWithToken 接口进行连接
+        /// </summary>
+        TIMEOUT,
+    
+        /// <summary>
+        /// 异常情况
+        /// </summary>
+        UNKNOWN
     }
 }
